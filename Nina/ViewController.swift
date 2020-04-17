@@ -13,6 +13,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        view.fill(with: [
+            SimpleTitleView(title: "Hello World"),
+            ShortTextInputView(placeholder: "hello world"),
+            OptionsInputView(options: ["Hello", "World"]),
+            LongTextInputView(),
+            QuestionView(question: "Hello?")
+        ])
+        
+        view.backgroundColor = .white
     }
 
 

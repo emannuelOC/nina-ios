@@ -31,6 +31,11 @@
 		C960F75D244530180044BB76 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74F244530180044BB76 /* GenericDataSource.swift */; };
 		C960F75E244530180044BB76 /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F750244530180044BB76 /* UIViewUtils.swift */; };
 		C960F75F244530180044BB76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F751244530180044BB76 /* ViewControllerTransition.swift */; };
+		C974D7462446489800999C47 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D7452446489800999C47 /* QuestionView.swift */; };
+		C974D74824492EF300999C47 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74724492EF300999C47 /* AnswerView.swift */; };
+		C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74924492F8700999C47 /* ShortTextInputView.swift */; };
+		C974D74C2449324200999C47 /* LongTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74B2449324200999C47 /* LongTextInputView.swift */; };
+		C974D74E2449339400999C47 /* OptionsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74D2449339400999C47 /* OptionsInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,11 @@
 		C960F74F244530180044BB76 /* GenericDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
 		C960F750244530180044BB76 /* UIViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewUtils.swift; sourceTree = "<group>"; };
 		C960F751244530180044BB76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTransition.swift; sourceTree = "<group>"; };
+		C974D7452446489800999C47 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		C974D74724492EF300999C47 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		C974D74924492F8700999C47 /* ShortTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextInputView.swift; sourceTree = "<group>"; };
+		C974D74B2449324200999C47 /* LongTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTextInputView.swift; sourceTree = "<group>"; };
+		C974D74D2449339400999C47 /* OptionsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +182,9 @@
 				C960F744244530180044BB76 /* IconView.swift */,
 				C960F74A244530180044BB76 /* PrimaryButtonView.swift */,
 				C960F74E244530180044BB76 /* Primitives.swift */,
+				C974D74924492F8700999C47 /* ShortTextInputView.swift */,
+				C974D74B2449324200999C47 /* LongTextInputView.swift */,
+				C974D74D2449339400999C47 /* OptionsInputView.swift */,
 				C960F748244530180044BB76 /* RegularNavigationController.swift */,
 				C960F747244530180044BB76 /* SelectionTableViewCell.swift */,
 				C960F745244530180044BB76 /* SelectionView.swift */,
@@ -180,6 +193,8 @@
 				C960F74B244530180044BB76 /* UIColorUtils.swift */,
 				C960F750244530180044BB76 /* UIViewUtils.swift */,
 				C960F751244530180044BB76 /* ViewControllerTransition.swift */,
+				C974D7452446489800999C47 /* QuestionView.swift */,
+				C974D74724492EF300999C47 /* AnswerView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -324,13 +339,18 @@
 				C960F754244530180044BB76 /* CheckView.swift in Sources */,
 				C960F75D244530180044BB76 /* GenericDataSource.swift in Sources */,
 				C960F75E244530180044BB76 /* UIViewUtils.swift in Sources */,
+				C974D74C2449324200999C47 /* LongTextInputView.swift in Sources */,
+				C974D74E2449339400999C47 /* OptionsInputView.swift in Sources */,
+				C974D7462446489800999C47 /* QuestionView.swift in Sources */,
 				C960F70F24452D700044BB76 /* SceneDelegate.swift in Sources */,
 				C960F759244530180044BB76 /* UIColorUtils.swift in Sources */,
+				C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */,
 				C960F75B244530180044BB76 /* GenericCell.swift in Sources */,
 				C960F71724452D700044BB76 /* Nina.xcdatamodeld in Sources */,
 				C960F756244530180044BB76 /* RegularNavigationController.swift in Sources */,
 				C960F758244530180044BB76 /* PrimaryButtonView.swift in Sources */,
 				C960F757244530180044BB76 /* SimpleTextView.swift in Sources */,
+				C974D74824492EF300999C47 /* AnswerView.swift in Sources */,
 				C960F755244530180044BB76 /* SelectionTableViewCell.swift in Sources */,
 				C960F753244530180044BB76 /* SelectionView.swift in Sources */,
 				C960F75F244530180044BB76 /* ViewControllerTransition.swift in Sources */,
