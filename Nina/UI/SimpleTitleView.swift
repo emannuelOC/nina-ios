@@ -19,6 +19,7 @@ class SimpleTitleView: UIView {
     lazy var titleLabel: UILabel = {
         let label = BoldLabel().notTranslating()
         label.text = self.title
+        label.numberOfLines = 0
         return label
     }()
     
@@ -43,7 +44,6 @@ extension SimpleTitleView {
     
     fileprivate func setupViews() {
         titleLabel.fill(view: self, margin: Margin.default)
-        heightAnchor.constraint(equalToConstant: 88).isActive = true
     }
     
 }

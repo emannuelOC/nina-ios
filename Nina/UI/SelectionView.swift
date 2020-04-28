@@ -8,6 +8,19 @@
 
 import UIKit
 
+final class ContentSizedTableView: UITableView {
+    override var contentSize:CGSize {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
+
+    override var intrinsicContentSize: CGSize {
+        layoutIfNeeded()
+        return CGSize(width: UIView.noIntrinsicMetric, height: contentSize.height)
+    }
+}
+
 protocol SelectionViewDelegate: class {
     func selectionView(_ selectionView: SelectionView, didSelect choice: String)
 }
@@ -20,7 +33,7 @@ class SelectionView: UIView {
         }
     }
     
-    var selectedIndex: Int? {
+    var selectedIndices = [Int]() {
         didSet {
             updateUI()
         }
@@ -36,15 +49,21 @@ class SelectionView: UIView {
     
     var dataSource: TableViewDataSourceDelegate<SelectionTableViewCell>?
     
+    var allowsMultipleSelection = false
+    
     var tableView: UITableView = {
-        let tableView = UITableView().notTranslating()
+        let tableView = ContentSizedTableView().notTranslating()
         tableView.bounces = false
         tableView.separatorStyle = .none
         return tableView
     }()
     
-    init(choices: [String], delegate: SelectionViewDelegate? = nil, expanded: Bool = true) {
+    init(choices: [String],
+         allowsMultipleSelection: Bool = false,
+         delegate: SelectionViewDelegate? = nil,
+         expanded: Bool = true) {
         self.choices = choices
+        self.allowsMultipleSelection = allowsMultipleSelection
         self.delegate = delegate
         self.isExpanded = expanded
         super.init(frame: .zero)
@@ -62,43 +81,69 @@ class SelectionView: UIView {
 extension SelectionView {
     
     func disselect() {
-        selectedIndex = nil
+        selectedIndices = []
         tableView.reloadData()
+    }
+    
+    func disselect(choice: String) {
+        if let index = choices.enumerated().filter({ $0.element == choice }).first?.offset {
+            remove(index: index)
+        }
+    }
+    
+    func select(choice: String) {
+        if let index = choices.enumerated().filter({ $0.element == choice }).first?.offset {
+            include(index: index)
+        }
+    }
+    
+    fileprivate func include(index: Int) {
+        if allowsMultipleSelection {
+            selectedIndices.append(index)
+        } else {
+            selectedIndices = [index]
+        }
+    }
+    
+    fileprivate func remove(index: Int) {
+        selectedIndices = selectedIndices.filter { $0 != index }
     }
     
     fileprivate func setupViews() {
         tableView.fill(view: self)
         if isExpanded {
             widthAnchor.constraint(equalToConstant: deviceWidth).isActive = true
-            heightConstraint = heightAnchor.constraint(equalToConstant: CGFloat(choices.count) * 56)
-            heightConstraint?.isActive = true
         }
     }
     
     fileprivate func updateUI() {
         dataSource?.data = generateData()
         tableView.reloadData()
-        heightConstraint?.constant = CGFloat(choices.count) * 56
     }
     
     fileprivate func setupDataSource() {
         let data = generateData()
         dataSource = TableViewDataSourceDelegate<SelectionTableViewCell>(data: data) { [weak self] (choice, index) in
             guard let `self` = self else { return }
-            self.selectedIndex = index
+            if self.selectedIndices.contains(index) {
+                self.selectedIndices = self.selectedIndices.filter { $0 != index }
+            } else {
+                self.include(index: index)
+            }
             self.delegate?.selectionView(self, didSelect: choice.title)
         }
         dataSource?.setup(tableView: tableView)
     }
     
     fileprivate func generateData() -> [SelectionData] {
-        if selectedIndex == nil {
+        if selectedIndices.isEmpty {
             return choices.map { SelectionData(title: $0, state: .available) }
         }
         
         return choices.enumerated().map { (index, choice) in
-            SelectionData(title: choice,
-                          state: index == (selectedIndex ?? -1) ? .selected : .unselected)
+            let alternative = allowsMultipleSelection ? CheckView.State.available : CheckView.State.unselected
+            return SelectionData(title: choice,
+                                 state: selectedIndices.contains(index) ? .selected : alternative)
         }
     }
 }

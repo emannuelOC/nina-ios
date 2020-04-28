@@ -30,6 +30,8 @@ class SimpleTextView: UIView {
     lazy var textLabel: UILabel = {
         let label = Label().notTranslating()
         label.text = text
+        label.numberOfLines = 0
+        label.preferredMaxLayoutWidth = deviceWidth
         return label
     }()
     

@@ -58,5 +58,7 @@
 	</array>
 	<key>NSMainStoryboardFile</key>
 	<string></string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Nina uses Health data to track your daily workout activities.</string>
 </dict>
 </plist>

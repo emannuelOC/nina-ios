@@ -78,7 +78,6 @@ extension CheckView {
     fileprivate func setupConstraints() {
         checkIconView.constraintSquare(side: 56)
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 56),
             borderView.heightAnchor.constraint(equalToConstant: 1),
             borderView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Margin.default),
             borderView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Margin.default),

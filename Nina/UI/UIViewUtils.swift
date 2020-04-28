@@ -7,19 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
 extension UIView {
     
-    func fill(view: UIView, margin: CGFloat = 0) {
+    func fill(view: UIView, flexibleBottom: Bool = false, margin: CGFloat = 0) {
         if superview == nil {
             view.addSubview(self)
         }
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: view.topAnchor, constant: margin),
-            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -margin),
             self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin),
             self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin)
         ])
+        if flexibleBottom {
+            self.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -margin).isActive = true
+        } else {
+            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -margin).isActive = true
+        }
     }
     
     func fill(with views: [UIView],
@@ -34,10 +39,13 @@ extension UIView {
         stackView.alignment = alignment
         stackView.distribution = distribution
         
-        stackView.fill(view: self)
+        stackView.fill(view: self, flexibleBottom: true)
     }
     
     func attachToTop(at view: UIView, margin: CGFloat = 0) {
+        if self.superview == nil {
+            view.addSubview(self)
+        }
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: view.topAnchor, constant: margin),
             leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin),
@@ -46,6 +54,9 @@ extension UIView {
     }
     
     func attachToBottom(at view: UIView, margin: CGFloat = 0) {
+        if self.superview == nil {
+            view.addSubview(self)
+        }
         NSLayoutConstraint.activate([
             bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -margin),
             leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin),
@@ -66,6 +77,10 @@ extension UIView {
     
     var deviceWidth: CGFloat {
         return UIScreen.main.bounds.width
+    }
+    
+    var context: NSManagedObjectContext? {
+        return (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     }
     
 }

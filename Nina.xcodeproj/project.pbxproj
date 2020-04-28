@@ -36,6 +36,13 @@
 		C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74924492F8700999C47 /* ShortTextInputView.swift */; };
 		C974D74C2449324200999C47 /* LongTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74B2449324200999C47 /* LongTextInputView.swift */; };
 		C974D74E2449339400999C47 /* OptionsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74D2449339400999C47 /* OptionsInputView.swift */; };
+		C9D6B195245884C6000BC23C /* CriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B194245884C6000BC23C /* CriteriaViewController.swift */; };
+		C9D6B19B2458DBD4000BC23C /* DayInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */; };
+		C9D6B19D2458E8FD000BC23C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */; };
+		C9D6B19F2458E9EA000BC23C /* ResultItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19E2458E9EA000BC23C /* ResultItemTableViewCell.swift */; };
+		C9D6B1A12458EDE4000BC23C /* DailyResult+Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B1A02458EDE4000BC23C /* DailyResult+Criteria.swift */; };
+		C9FB90682454E65500800AF9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FB90672454E65500800AF9 /* HealthKit.framework */; };
+		C9FB906A2454E6B100800AF9 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB90692454E6B100800AF9 /* HealthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +98,14 @@
 		C974D74924492F8700999C47 /* ShortTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextInputView.swift; sourceTree = "<group>"; };
 		C974D74B2449324200999C47 /* LongTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTextInputView.swift; sourceTree = "<group>"; };
 		C974D74D2449339400999C47 /* OptionsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInputView.swift; sourceTree = "<group>"; };
+		C9D6B194245884C6000BC23C /* CriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaViewController.swift; sourceTree = "<group>"; };
+		C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformationViewModel.swift; sourceTree = "<group>"; };
+		C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		C9D6B19E2458E9EA000BC23C /* ResultItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemTableViewCell.swift; sourceTree = "<group>"; };
+		C9D6B1A02458EDE4000BC23C /* DailyResult+Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyResult+Criteria.swift"; sourceTree = "<group>"; };
+		C9FB90652454E65500800AF9 /* Nina.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nina.entitlements; sourceTree = "<group>"; };
+		C9FB90672454E65500800AF9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		C9FB90692454E6B100800AF9 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FB90682454E65500800AF9 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +141,7 @@
 				C960F72524452D730044BB76 /* NinaTests */,
 				C960F73024452D730044BB76 /* NinaUITests */,
 				C960F70A24452D700044BB76 /* Products */,
+				C9FB90662454E65500800AF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +158,7 @@
 		C960F70B24452D700044BB76 /* Nina */ = {
 			isa = PBXGroup;
 			children = (
+				C9FB90652454E65500800AF9 /* Nina.entitlements */,
 				C960F743244530100044BB76 /* UI */,
 				C960F70C24452D700044BB76 /* AppDelegate.swift */,
 				C960F70E24452D700044BB76 /* SceneDelegate.swift */,
@@ -148,9 +166,15 @@
 				C960F71824452D730044BB76 /* Assets.xcassets */,
 				C960F71A24452D730044BB76 /* LaunchScreen.storyboard */,
 				C960F71D24452D730044BB76 /* Info.plist */,
+				C9FB90692454E6B100800AF9 /* HealthManager.swift */,
 				C960F71524452D700044BB76 /* Nina.xcdatamodeld */,
 				C960F73F24452EAC0044BB76 /* InitialViewController.swift */,
 				C960F74124452F1A0044BB76 /* DayInformationView.swift */,
+				C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */,
+				C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */,
+				C9D6B1A02458EDE4000BC23C /* DailyResult+Criteria.swift */,
+				C9D6B19E2458E9EA000BC23C /* ResultItemTableViewCell.swift */,
+				C9D6B194245884C6000BC23C /* CriteriaViewController.swift */,
 			);
 			path = Nina;
 			sourceTree = "<group>";
@@ -197,6 +221,14 @@
 				C974D74724492EF300999C47 /* AnswerView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		C9FB90662454E65500800AF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9FB90672454E65500800AF9 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,24 +368,30 @@
 				C960F74224452F1A0044BB76 /* DayInformationView.swift in Sources */,
 				C960F70D24452D700044BB76 /* AppDelegate.swift in Sources */,
 				C960F75A244530180044BB76 /* SimpleTitleView.swift in Sources */,
+				C9D6B19D2458E8FD000BC23C /* ResultsViewController.swift in Sources */,
 				C960F754244530180044BB76 /* CheckView.swift in Sources */,
 				C960F75D244530180044BB76 /* GenericDataSource.swift in Sources */,
 				C960F75E244530180044BB76 /* UIViewUtils.swift in Sources */,
 				C974D74C2449324200999C47 /* LongTextInputView.swift in Sources */,
 				C974D74E2449339400999C47 /* OptionsInputView.swift in Sources */,
+				C9D6B19B2458DBD4000BC23C /* DayInformationViewModel.swift in Sources */,
 				C974D7462446489800999C47 /* QuestionView.swift in Sources */,
 				C960F70F24452D700044BB76 /* SceneDelegate.swift in Sources */,
 				C960F759244530180044BB76 /* UIColorUtils.swift in Sources */,
 				C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */,
 				C960F75B244530180044BB76 /* GenericCell.swift in Sources */,
+				C9D6B195245884C6000BC23C /* CriteriaViewController.swift in Sources */,
 				C960F71724452D700044BB76 /* Nina.xcdatamodeld in Sources */,
+				C9D6B19F2458E9EA000BC23C /* ResultItemTableViewCell.swift in Sources */,
 				C960F756244530180044BB76 /* RegularNavigationController.swift in Sources */,
 				C960F758244530180044BB76 /* PrimaryButtonView.swift in Sources */,
 				C960F757244530180044BB76 /* SimpleTextView.swift in Sources */,
 				C974D74824492EF300999C47 /* AnswerView.swift in Sources */,
 				C960F755244530180044BB76 /* SelectionTableViewCell.swift in Sources */,
+				C9FB906A2454E6B100800AF9 /* HealthManager.swift in Sources */,
 				C960F753244530180044BB76 /* SelectionView.swift in Sources */,
 				C960F75F244530180044BB76 /* ViewControllerTransition.swift in Sources */,
+				C9D6B1A12458EDE4000BC23C /* DailyResult+Criteria.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nina/Nina.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KKKTBJ9APM;
 				INFOPLIST_FILE = Nina/Info.plist;
@@ -536,6 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nina/Nina.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KKKTBJ9APM;
 				INFOPLIST_FILE = Nina/Info.plist;
