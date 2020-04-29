@@ -21,6 +21,7 @@ class PrimaryButtonView: UIView {
             .notTranslating()
             .backgrounded(color: Color.primary)
             .radiusConfigured(radius: Radius.normal)
+        button.setTitleColor(Color.secondary, for: .normal)
         button.titleLabel?.font = Font.regular
         button.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return button

@@ -38,7 +38,9 @@ class CheckView: UIView {
     }()
     
     lazy var checkIconView: IconView = {
-        let imageView = IconView(image: Images.check).notTranslating()
+        let image = UIImage(systemName: "checkmark.circle")
+        let imageView = IconView(image: image).notTranslating()
+        imageView.tintColor = Color.primary
         return imageView
     }()
     

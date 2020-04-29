@@ -55,9 +55,9 @@ extension SimpleTextView {
         textLabel.text = self.text
         switch state {
         case .disabled:
-            textLabel.textColor = .gray
+            textLabel.textColor = Color.terciary
         case .enabled:
-            textLabel.textColor = .black
+            textLabel.textColor = Color.primary
         }
     }
     

@@ -52,8 +52,8 @@ let languageOptions: [String: Answer] = [
 ]
 let skillsQuestion = "Você está aprendendo alguma habilidade nova?"
 let skillsOptions: [String: Answer] = [
-    "Sim": Answer.text(""),
-    "Não": Answer.text("")
+    "Sim": Answer.yesOrNo(true),
+    "Não": Answer.yesOrNo(false)
 ]
 
 enum SoilCriteria: Criteria {
@@ -123,6 +123,8 @@ enum BranchesCriteria: Criteria {
 protocol DayInformationViewDelegate: class {
     func dayInformationView<T: Criteria>(_ dayInformationView: DayInformationView,
                             didSelect criteria: T)
+    func dayInformationView(_ dayInformationView: DayInformationView,
+                            didSelect exerciseSummary: HKActivitySummary)
 }
 
 class DayInformationView: UIView {
@@ -160,6 +162,8 @@ class DayInformationView: UIView {
         super.init(frame: .zero)
         if let context = context {
             viewModel = DayInformationViewModel(context: context)
+            branchInformations = viewModel?.dailyResult.branchInformations ?? [:]
+            soilInformations = viewModel?.dailyResult.soilInformations ?? [:]
         }
         setupViews()
         authorizeHealthKit()
@@ -191,7 +195,7 @@ extension DayInformationView {
     }
     
     fileprivate func setupViews() {
-        backgroundColor = .white
+        backgroundColor = Color.secondary
         
         fill(with: [
             SimpleTitleView(title: "Cuidando do solo:"),
@@ -209,7 +213,11 @@ extension DayInformationView {
     }
     
     fileprivate func showSoilSelection(for choice: String) {
-        if let criteria = SoilCriteria.criteria(for: choice) {
+        if choice == "Exercícios",
+            let summary = summary {
+            delegate?.dayInformationView(self, didSelect: summary)
+
+        } else if let criteria = SoilCriteria.criteria(for: choice) {
             showSelection(for: criteria)
         }
     }

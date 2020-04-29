@@ -45,7 +45,7 @@ class ResultsViewController: UIViewController {
     }
     
     fileprivate func show(results: DailyResult) {
-        let vc = InitialViewController(result: results)
+        let vc = DailyResultViewController(result: results)
         navigationController?.show(vc, sender: nil)
     }
     

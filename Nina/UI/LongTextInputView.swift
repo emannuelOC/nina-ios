@@ -11,7 +11,12 @@ import UIKit
 class LongTextInputView: UIView {
     
     var text: String? {
-        return textView.text
+        get {
+            return textView.text
+        }
+        set {
+            textView.text = newValue
+        }
     }
     
     lazy var textView: UITextView = {

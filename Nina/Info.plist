@@ -17,9 +17,15 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Nina uses Health data to track your daily workout activities.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Nina uses Health data to track your daily workout activities.</string>
+	<key>NSMainStoryboardFile</key>
+	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,9 +62,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSMainStoryboardFile</key>
-	<string></string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Nina uses Health data to track your daily workout activities.</string>
 </dict>
 </plist>

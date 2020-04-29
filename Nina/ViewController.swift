@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             QuestionView(question: "Hello?")
         ])
         
-        view.backgroundColor = .white
+        view.backgroundColor = Color.secondary
     }
 
 

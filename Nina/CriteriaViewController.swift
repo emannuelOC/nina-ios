@@ -14,6 +14,21 @@ enum Answer {
     case number(Double)
 }
 
+extension Answer: Comparable {
+    
+    static func < (lhs: Answer, rhs: Answer) -> Bool {
+        switch (lhs, rhs) {
+        case let (.yesOrNo(l), .yesOrNo(r)):
+            return l || !r
+        case let (.number(l), .number(r)):
+            return l > r
+        default:
+            return true
+        }
+    }
+    
+}
+
 protocol CriteriaViewControllerDelegate: class {
     func criteriaViewController<T: Criteria>(_ viewController: CriteriaViewController<T>,
                                 didAdd answer: Answer,
@@ -44,12 +59,21 @@ class CriteriaViewController<T: Criteria>: UIViewController, SelectionViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = Color.secondary
+        
+        let options = criteria.information.options.keys.sorted { (lhs, rhs) -> Bool in
+            let options = criteria.information.options
+            guard let option1 = options[lhs],
+                let option2 = options[rhs] else {
+                    return false
+            }
+            return option1 < option2
+        }
         
         view.fill(with: [
             SimpleTitleView(title: criteria.information.title),
             SimpleTextView(text: criteria.information.question),
-            SelectionView(choices: Array(criteria.information.options.keys),
+            SelectionView(choices: Array(options),
                           allowsMultipleSelection: false,
                           delegate: self,
                           expanded: true)

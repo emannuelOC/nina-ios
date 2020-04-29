@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import HealthKit
 
-class InitialViewController: UIViewController {
+class DailyResultViewController: UIViewController {
     
     var result: DailyResult?
 
@@ -51,17 +52,25 @@ class InitialViewController: UIViewController {
     
 }
 
-extension InitialViewController: DayInformationViewDelegate {
+extension DailyResultViewController: DayInformationViewDelegate {
     
     func dayInformationView<T>(_ dayInformationView: DayInformationView, didSelect criteria: T) where T : Criteria {
         let vc = CriteriaViewController(criteria: criteria)
         vc.delegate = self
+        vc.presentationController?.delegate = self
+        present(vc, animated: true, completion: nil)
+    }
+    
+    func dayInformationView(_ dayInformationView: DayInformationView, didSelect exerciseSummary: HKActivitySummary) {
+        let vc = ExerciseSummaryViewController(summary: exerciseSummary,
+                                               date: dayInformationView.viewModel?.dailyResult.date ?? Date())
+        vc.presentationController?.delegate = self
         present(vc, animated: true, completion: nil)
     }
     
 }
 
-extension InitialViewController: CriteriaViewControllerDelegate {
+extension DailyResultViewController: CriteriaViewControllerDelegate {
     
     func criteriaViewController<T>(_ viewController: CriteriaViewController<T>,
                                    didAdd answer: Answer,
@@ -69,6 +78,14 @@ extension InitialViewController: CriteriaViewControllerDelegate {
         dayInformationView.set(answer: answer, for: criteria)
         dayInformationView.updateUI()
         dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+extension DailyResultViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        dayInformationView.updateUI()
     }
     
 }

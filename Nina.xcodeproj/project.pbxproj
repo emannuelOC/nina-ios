@@ -15,7 +15,7 @@
 		C960F71C24452D730044BB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C960F71A24452D730044BB76 /* LaunchScreen.storyboard */; };
 		C960F72724452D730044BB76 /* NinaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F72624452D730044BB76 /* NinaTests.swift */; };
 		C960F73224452D730044BB76 /* NinaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F73124452D730044BB76 /* NinaUITests.swift */; };
-		C960F74024452EAC0044BB76 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F73F24452EAC0044BB76 /* InitialViewController.swift */; };
+		C960F74024452EAC0044BB76 /* DailyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F73F24452EAC0044BB76 /* DailyResultViewController.swift */; };
 		C960F74224452F1A0044BB76 /* DayInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74124452F1A0044BB76 /* DayInformationView.swift */; };
 		C960F752244530180044BB76 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F744244530180044BB76 /* IconView.swift */; };
 		C960F753244530180044BB76 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F745244530180044BB76 /* SelectionView.swift */; };
@@ -41,6 +41,8 @@
 		C9D6B19D2458E8FD000BC23C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */; };
 		C9D6B19F2458E9EA000BC23C /* ResultItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19E2458E9EA000BC23C /* ResultItemTableViewCell.swift */; };
 		C9D6B1A12458EDE4000BC23C /* DailyResult+Criteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B1A02458EDE4000BC23C /* DailyResult+Criteria.swift */; };
+		C9D6B1A32458F556000BC23C /* ExerciseSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B1A22458F556000BC23C /* ExerciseSummaryViewController.swift */; };
+		C9D6B1A52459B4C7000BC23C /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B1A42459B4C7000BC23C /* NotificationsViewController.swift */; };
 		C9FB90682454E65500800AF9 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FB90672454E65500800AF9 /* HealthKit.framework */; };
 		C9FB906A2454E6B100800AF9 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB90692454E6B100800AF9 /* HealthManager.swift */; };
 /* End PBXBuildFile section */
@@ -77,7 +79,7 @@
 		C960F72D24452D730044BB76 /* NinaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960F73124452D730044BB76 /* NinaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaUITests.swift; sourceTree = "<group>"; };
 		C960F73324452D730044BB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C960F73F24452EAC0044BB76 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		C960F73F24452EAC0044BB76 /* DailyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyResultViewController.swift; sourceTree = "<group>"; };
 		C960F74124452F1A0044BB76 /* DayInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformationView.swift; sourceTree = "<group>"; };
 		C960F744244530180044BB76 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		C960F745244530180044BB76 /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,8 @@
 		C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		C9D6B19E2458E9EA000BC23C /* ResultItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemTableViewCell.swift; sourceTree = "<group>"; };
 		C9D6B1A02458EDE4000BC23C /* DailyResult+Criteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyResult+Criteria.swift"; sourceTree = "<group>"; };
+		C9D6B1A22458F556000BC23C /* ExerciseSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSummaryViewController.swift; sourceTree = "<group>"; };
+		C9D6B1A42459B4C7000BC23C /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		C9FB90652454E65500800AF9 /* Nina.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nina.entitlements; sourceTree = "<group>"; };
 		C9FB90672454E65500800AF9 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		C9FB90692454E6B100800AF9 /* HealthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
@@ -168,7 +172,9 @@
 				C960F71D24452D730044BB76 /* Info.plist */,
 				C9FB90692454E6B100800AF9 /* HealthManager.swift */,
 				C960F71524452D700044BB76 /* Nina.xcdatamodeld */,
-				C960F73F24452EAC0044BB76 /* InitialViewController.swift */,
+				C9D6B1A22458F556000BC23C /* ExerciseSummaryViewController.swift */,
+				C960F73F24452EAC0044BB76 /* DailyResultViewController.swift */,
+				C9D6B1A42459B4C7000BC23C /* NotificationsViewController.swift */,
 				C960F74124452F1A0044BB76 /* DayInformationView.swift */,
 				C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */,
 				C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */,
@@ -361,7 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C960F74024452EAC0044BB76 /* InitialViewController.swift in Sources */,
+				C960F74024452EAC0044BB76 /* DailyResultViewController.swift in Sources */,
 				C960F752244530180044BB76 /* IconView.swift in Sources */,
 				C960F71124452D700044BB76 /* ViewController.swift in Sources */,
 				C960F75C244530180044BB76 /* Primitives.swift in Sources */,
@@ -388,8 +394,10 @@
 				C960F757244530180044BB76 /* SimpleTextView.swift in Sources */,
 				C974D74824492EF300999C47 /* AnswerView.swift in Sources */,
 				C960F755244530180044BB76 /* SelectionTableViewCell.swift in Sources */,
+				C9D6B1A32458F556000BC23C /* ExerciseSummaryViewController.swift in Sources */,
 				C9FB906A2454E6B100800AF9 /* HealthManager.swift in Sources */,
 				C960F753244530180044BB76 /* SelectionView.swift in Sources */,
+				C9D6B1A52459B4C7000BC23C /* NotificationsViewController.swift in Sources */,
 				C960F75F244530180044BB76 /* ViewControllerTransition.swift in Sources */,
 				C9D6B1A12458EDE4000BC23C /* DailyResult+Criteria.swift in Sources */,
 			);
@@ -558,8 +566,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nina/Nina.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = KKKTBJ9APM;
 				INFOPLIST_FILE = Nina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,8 +587,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nina/Nina.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = KKKTBJ9APM;
 				INFOPLIST_FILE = Nina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
