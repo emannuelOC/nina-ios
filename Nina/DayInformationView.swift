@@ -46,8 +46,8 @@ let readingQuestion = "Você leu algum livro ou artigo científico hoje?"
 let readingOptions = ["Sim": Answer.yesOrNo(true), "Não": Answer.yesOrNo(false)]
 let languageQuestion = "Você está estudando algum idioma estrangeiro? E fez alguma atividade nesse idioma hoje?"
 let languageOptions: [String: Answer] = [
-    "Estou estudando e realizei exercícios nesse idioma hoje": Answer.number(5),
-    "Estou estudando mas não realizei exercícios nesse idioma hoje": Answer.number(3),
+    "Estou estudando e realizei exercícios nesse idioma hoje": Answer.number(10),
+    "Estou estudando mas não realizei exercícios nesse idioma hoje": Answer.number(5),
     "Não estou estudando nenhum idioma estrangeiro": Answer.number(1)
 ]
 let skillsQuestion = "Você está aprendendo alguma habilidade nova?"
@@ -128,6 +128,8 @@ protocol DayInformationViewDelegate: class {
 }
 
 class DayInformationView: UIView {
+    
+    lazy var treeView = TreeView().notTranslating()
     
     lazy var soilView = SelectionView(choices: soilButtons, allowsMultipleSelection: true, delegate: self).notTranslating()
     lazy var branchesView = SelectionView(choices: branchButtons, allowsMultipleSelection: true, delegate: self).notTranslating()

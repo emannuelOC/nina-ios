@@ -12,6 +12,8 @@ import HealthKit
 class DailyResultViewController: UIViewController {
     
     var result: DailyResult?
+    
+    lazy var treeView = TreeView().notTranslating()
 
     lazy var dayInformationView: DayInformationView = {
         let isInteractive = Calendar.current.isDateInToday((result?.date ?? Date()))
@@ -39,6 +41,11 @@ class DailyResultViewController: UIViewController {
         setupTitle()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateTreeView()
+    }
+    
     fileprivate func setupTitle() {
         let date = result?.date ?? Date()
         if Calendar.current.isDateInToday(date) {
@@ -48,6 +55,23 @@ class DailyResultViewController: UIViewController {
             formatter.dateStyle = .medium
             title = formatter.string(from: date)
         }
+        
+        treeView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(didTapTreeView))
+        )
+        
+        treeView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        treeView.widthAnchor.constraint(equalToConstant: 44).isActive = true
+        
+        let item = UIBarButtonItem(customView: treeView)
+        navigationItem.rightBarButtonItem = item
+    }
+    
+    @objc fileprivate func didTapTreeView() {
+        let vc = TreeViewController()
+        vc.branchesScore = dayInformationView.viewModel?.branchesScore ?? 0.0
+        vc.soilScore = dayInformationView.viewModel?.soilScore ?? 0.0
+        present(vc, animated: true, completion: nil)
     }
     
 }
@@ -77,6 +101,7 @@ extension DailyResultViewController: CriteriaViewControllerDelegate {
                                    to criteria: T) where T : Criteria {
         dayInformationView.set(answer: answer, for: criteria)
         dayInformationView.updateUI()
+        updateTreeView()
         dismiss(animated: true, completion: nil)
     }
     
@@ -86,6 +111,12 @@ extension DailyResultViewController: UIAdaptivePresentationControllerDelegate {
     
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         dayInformationView.updateUI()
+        updateTreeView()
+    }
+    
+    fileprivate func updateTreeView() {
+        treeView.branchesScore = dayInformationView.viewModel?.branchesScore ?? 0.0
+        treeView.soilScore = dayInformationView.viewModel?.soilScore ?? 0.0
     }
     
 }

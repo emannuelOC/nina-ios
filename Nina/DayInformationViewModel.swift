@@ -33,6 +33,14 @@ class DayInformationViewModel: DayInformationViewModelType {
         }
     }
     
+    var branchesScore: Double {
+        return (dailyResult.readingScore + dailyResult.languagesScore + dailyResult.skillsScore) / 3.0
+    }
+    
+    var soilScore: Double {
+        return (dailyResult.exercisesScore + dailyResult.foodScore + dailyResult.sleepScore) / 3.0
+    }
+    
     fileprivate func setBranchesScore(criteria: BranchesCriteria, answer: Answer) {
         switch (criteria, answer) {
         case (.reading, .yesOrNo(let done)):
