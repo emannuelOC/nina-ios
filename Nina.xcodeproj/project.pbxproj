@@ -33,6 +33,7 @@
 		C960F75F244530180044BB76 /* ViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F751244530180044BB76 /* ViewControllerTransition.swift */; };
 		C970AE0C245E12480017B218 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970AE0B245E12480017B218 /* TreeView.swift */; };
 		C970AE0E245E1AC50017B218 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970AE0D245E1AC50017B218 /* TreeViewController.swift */; };
+		C970AE122460F4000017B218 /* Nina.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970AE112460F4000017B218 /* Nina.swift */; };
 		C974D7462446489800999C47 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D7452446489800999C47 /* QuestionView.swift */; };
 		C974D74824492EF300999C47 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74724492EF300999C47 /* AnswerView.swift */; };
 		C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74924492F8700999C47 /* ShortTextInputView.swift */; };
@@ -100,6 +101,7 @@
 		C960F751244530180044BB76 /* ViewControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTransition.swift; sourceTree = "<group>"; };
 		C970AE0B245E12480017B218 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
 		C970AE0D245E1AC50017B218 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
+		C970AE112460F4000017B218 /* Nina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nina.swift; sourceTree = "<group>"; };
 		C974D7452446489800999C47 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		C974D74724492EF300999C47 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		C974D74924492F8700999C47 /* ShortTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextInputView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				C9FB90652454E65500800AF9 /* Nina.entitlements */,
 				C960F743244530100044BB76 /* UI */,
 				C960F70C24452D700044BB76 /* AppDelegate.swift */,
+				C970AE112460F4000017B218 /* Nina.swift */,
 				C960F70E24452D700044BB76 /* SceneDelegate.swift */,
 				C960F71024452D700044BB76 /* ViewController.swift */,
 				C960F71824452D730044BB76 /* Assets.xcassets */,
@@ -384,6 +387,7 @@
 				C960F74224452F1A0044BB76 /* DayInformationView.swift in Sources */,
 				C960F70D24452D700044BB76 /* AppDelegate.swift in Sources */,
 				C960F75A244530180044BB76 /* SimpleTitleView.swift in Sources */,
+				C970AE122460F4000017B218 /* Nina.swift in Sources */,
 				C9D6B19D2458E8FD000BC23C /* ResultsViewController.swift in Sources */,
 				C960F754244530180044BB76 /* CheckView.swift in Sources */,
 				C960F75D244530180044BB76 /* GenericDataSource.swift in Sources */,
@@ -578,7 +582,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nina/Nina.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = KKKTBJ9APM;
 				INFOPLIST_FILE = Nina/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -599,7 +603,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nina/Nina.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = KKKTBJ9APM;
 				INFOPLIST_FILE = Nina/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
