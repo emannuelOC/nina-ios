@@ -19,6 +19,9 @@ class ResultItemTableViewCell: UITableViewCell, IdentifiableCell, ConfigurableCe
     }()
     
     func setup(data: DataType) {
+        backgroundColor = Color.secondary
+        contentView.backgroundColor = Color.secondary
+        textLabel?.textColor = Color.primary
         textLabel?.text = formatter.string(from: data.date ?? Date())
     }
     

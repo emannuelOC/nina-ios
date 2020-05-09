@@ -30,7 +30,9 @@ class RegularNavigationController: UINavigationController {
             NSAttributedString.Key.foregroundColor: Color.primary,
             NSAttributedString.Key.font: font
         ]
+        
         navigationBar.tintColor = Color.primary
+        navigationBar.barTintColor = Color.secondary
         navigationBar.backgroundColor = Color.secondary
         navigationBar.isTranslucent = false
     }

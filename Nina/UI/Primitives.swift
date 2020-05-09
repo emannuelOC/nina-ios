@@ -14,9 +14,10 @@ struct Margin {
 }
 
 struct Color {
-    static let primary = UIColor.label
-    static let secondary = UIColor.systemBackground
+    static let primary = UIColor(named: "PrimaryText") ?? UIColor.label
+    static let secondary = UIColor(named: "PrimaryBackground") ?? UIColor.systemBackground
     static let terciary = UIColor.placeholderText
+    static let white = UIColor(named: "RealWhite") ?? UIColor.systemBackground
 }
 
 struct Font {

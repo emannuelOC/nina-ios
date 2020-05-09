@@ -34,7 +34,7 @@ class TreeViewController: UIViewController {
     }
     
     fileprivate func setupViews() {
-        view.backgroundColor = .white
+        view.backgroundColor = Color.secondary
         
         view.fill(with: [
             treeView,
@@ -45,6 +45,8 @@ class TreeViewController: UIViewController {
         ])
         
         treeView.constraintSquare(side: 200)
+        treeView.layer.cornerRadius = 100
+        treeView.backgroundColor = Color.secondary
         
         treeView.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(debug))

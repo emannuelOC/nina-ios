@@ -31,6 +31,8 @@ class SelectionTableViewCell: UITableViewCell {
 extension SelectionTableViewCell {
     fileprivate func setupViews() {
         checkView.fill(view: contentView)
+        backgroundColor = Color.secondary
+        contentView.backgroundColor = Color.secondary
     }
 }
 

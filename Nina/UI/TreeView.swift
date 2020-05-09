@@ -108,9 +108,9 @@ class TreeView: UIView {
     }
     
     fileprivate var leafColors: [UIColor] {
-        let startColors = [#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), #colorLiteral(red: 0.4678211517, green: 0.671089179, blue: 0.7550437236, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)]
+        let startColors = [#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), #colorLiteral(red: 0.4678211517, green: 0.671089179, blue: 0.7550437236, alpha: 1), #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)]
         
-        let endColors = [#colorLiteral(red: 0.5, green: 0.5, blue: 0.5, alpha: 1), #colorLiteral(red: 0.3125552973, green: 0.4637626598, blue: 0.5608444037, alpha: 1), #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)]
+        let endColors = [#colorLiteral(red: 0.5, green: 0.5, blue: 0.5, alpha: 1), #colorLiteral(red: 0.3125552973, green: 0.4637626598, blue: 0.5608444037, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)]
         
         return [
             startColors[Int(branchesScore/5.0)],

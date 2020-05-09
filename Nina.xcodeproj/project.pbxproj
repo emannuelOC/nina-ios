@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C960F70D24452D700044BB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F70C24452D700044BB76 /* AppDelegate.swift */; };
 		C960F70F24452D700044BB76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F70E24452D700044BB76 /* SceneDelegate.swift */; };
-		C960F71124452D700044BB76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F71024452D700044BB76 /* ViewController.swift */; };
 		C960F71724452D700044BB76 /* Nina.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C960F71524452D700044BB76 /* Nina.xcdatamodeld */; };
 		C960F71924452D730044BB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C960F71824452D730044BB76 /* Assets.xcassets */; };
 		C960F71C24452D730044BB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C960F71A24452D730044BB76 /* LaunchScreen.storyboard */; };
@@ -34,6 +33,7 @@
 		C970AE0C245E12480017B218 /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970AE0B245E12480017B218 /* TreeView.swift */; };
 		C970AE0E245E1AC50017B218 /* TreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970AE0D245E1AC50017B218 /* TreeViewController.swift */; };
 		C970AE122460F4000017B218 /* Nina.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970AE112460F4000017B218 /* Nina.swift */; };
+		C970B03F24635BB30017B218 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C970B03E24635BB30017B218 /* Colors.xcassets */; };
 		C974D7462446489800999C47 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D7452446489800999C47 /* QuestionView.swift */; };
 		C974D74824492EF300999C47 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74724492EF300999C47 /* AnswerView.swift */; };
 		C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74924492F8700999C47 /* ShortTextInputView.swift */; };
@@ -72,7 +72,6 @@
 		C960F70924452D700044BB76 /* Nina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960F70C24452D700044BB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C960F70E24452D700044BB76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C960F71024452D700044BB76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C960F71624452D700044BB76 /* Nina.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nina.xcdatamodel; sourceTree = "<group>"; };
 		C960F71824452D730044BB76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C960F71B24452D730044BB76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		C970AE0B245E12480017B218 /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
 		C970AE0D245E1AC50017B218 /* TreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeViewController.swift; sourceTree = "<group>"; };
 		C970AE112460F4000017B218 /* Nina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nina.swift; sourceTree = "<group>"; };
+		C970B03E24635BB30017B218 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		C974D7452446489800999C47 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		C974D74724492EF300999C47 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		C974D74924492F8700999C47 /* ShortTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextInputView.swift; sourceTree = "<group>"; };
@@ -176,7 +176,6 @@
 				C960F70C24452D700044BB76 /* AppDelegate.swift */,
 				C970AE112460F4000017B218 /* Nina.swift */,
 				C960F70E24452D700044BB76 /* SceneDelegate.swift */,
-				C960F71024452D700044BB76 /* ViewController.swift */,
 				C960F71824452D730044BB76 /* Assets.xcassets */,
 				C960F71A24452D730044BB76 /* LaunchScreen.storyboard */,
 				C960F71D24452D730044BB76 /* Info.plist */,
@@ -192,6 +191,7 @@
 				C9D6B1A02458EDE4000BC23C /* DailyResult+Criteria.swift */,
 				C9D6B19E2458E9EA000BC23C /* ResultItemTableViewCell.swift */,
 				C9D6B194245884C6000BC23C /* CriteriaViewController.swift */,
+				C970B03E24635BB30017B218 /* Colors.xcassets */,
 			);
 			path = Nina;
 			sourceTree = "<group>";
@@ -354,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C970B03F24635BB30017B218 /* Colors.xcassets in Resources */,
 				C960F71C24452D730044BB76 /* LaunchScreen.storyboard in Resources */,
 				C960F71924452D730044BB76 /* Assets.xcassets in Resources */,
 			);
@@ -382,7 +383,6 @@
 			files = (
 				C960F74024452EAC0044BB76 /* DailyResultViewController.swift in Sources */,
 				C960F752244530180044BB76 /* IconView.swift in Sources */,
-				C960F71124452D700044BB76 /* ViewController.swift in Sources */,
 				C960F75C244530180044BB76 /* Primitives.swift in Sources */,
 				C960F74224452F1A0044BB76 /* DayInformationView.swift in Sources */,
 				C960F70D24452D700044BB76 /* AppDelegate.swift in Sources */,

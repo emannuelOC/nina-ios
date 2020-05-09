@@ -21,11 +21,14 @@ class ResultsViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView().notTranslating()
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = Color.secondary
+        
         return tableView
     }()
     
     override func loadView() {
-        view = UIView().backgrounded(color: .white)
+        view = UIView().backgrounded(color: Color.secondary)
         setupViews()
     }
     

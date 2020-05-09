@@ -33,7 +33,7 @@ class ExerciseSummaryViewController: UIViewController {
             formatter.dateStyle = .medium
             suffix = "no dia \(formatter.string(from: date))."
         }
-        let text = "Como você usa Apple Watch, é possível calcular obter os seus exercícios pelo HealthKit."
+        let text = "Como você usa Apple Watch, é possível obter o seu tempo de exercícios pelo HealthKit."
             + " Você realizou \(self.summary.appleExerciseTime.doubleValue(for: .minute())) minutos de exercício "
             + suffix
         view.fill(with: [
