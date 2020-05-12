@@ -16,14 +16,14 @@ extension UIView {
             view.addSubview(self)
         }
         NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: view.topAnchor, constant: margin),
+            self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: margin),
             self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margin),
             self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -margin)
         ])
         if flexibleBottom {
-            self.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -margin).isActive = true
+            self.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -margin).isActive = true
         } else {
-            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -margin).isActive = true
+            self.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -margin).isActive = true
         }
     }
     
