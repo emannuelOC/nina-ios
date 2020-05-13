@@ -15,7 +15,7 @@ enum InitialViewData {
 
 class InitialViewController: UIViewController {
     
-    var data: [InitialViewData] = ["Read", "Language", "Skills", "Tree", "Exercise", "Food", "Sleep"].map {
+    var data: [InitialViewData] = ["Leitura", "Idiomas", "Habilidades", "Tree", "Exercícios", "Alimentação", "Sono"].map {
         if $0 == "Tree" {
             return InitialViewData.tree
         }
@@ -23,28 +23,47 @@ class InitialViewController: UIViewController {
     }
     
     var viewModel: DayInformationViewModel?
+    var healthManager: HealthManager?
+    
+    var isToday: Bool {
+        let date = viewModel?.dailyResult.date ?? Date()
+        return Calendar.current.isDateInToday(date)
+    }
     
     lazy var collectionView: UICollectionView = {
         let layout = InitialColectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .purple
+        collectionView.backgroundColor = Color.white
         collectionView.register(InitialCollectionViewCell.self,
                                 forCellWithReuseIdentifier: String(describing: InitialCollectionViewCell.self))
         collectionView.register(TreeViewCell.self,
                                 forCellWithReuseIdentifier: String(describing: TreeViewCell.self))
         collectionView.dataSource = self
+        collectionView.delegate = self
         return collectionView
     }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupManager()
         setupViews()
         setupViewModel()
+        updateExercises()
+    }
+    
+    fileprivate func setupManager() {
+        healthManager = HealthManager()
+        healthManager?.retrieveExercises(completion: { [weak self] (minutes) in
+            guard let self = self else { return }
+            self.viewModel?.setScore(criteria: SoilCriteria.exercises, answer: .number(minutes))
+            self.collectionView.reloadData()
+        })
     }
     
     fileprivate func setupViews() {
+        view.backgroundColor = Color.white
         collectionView.fill(view: view)
     }
     
@@ -54,9 +73,38 @@ class InitialViewController: UIViewController {
         }
     }
     
+    fileprivate func updateExercises() {
+        if !isToday {
+            return
+        }
+        if healthManager?.isAvailable ?? false {
+            viewModel?.setScore(criteria: SoilCriteria.exercises,
+                                answer: .number(healthManager?.exercises ?? 0.0))
+        }
+    }
+    
 }
 
-extension InitialViewController: UICollectionViewDataSource {
+extension InitialViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    fileprivate func score(for criteriaName: String) -> Double {
+        switch criteriaName {
+        case "Leitura":
+            return viewModel?.dailyResult.readingScore ?? 0.0
+        case "Idiomas":
+            return viewModel?.dailyResult.languagesScore ?? 0.0
+        case "Habilidades":
+            return viewModel?.dailyResult.skillsScore ?? 0.0
+        case "Exercícios":
+            return viewModel?.dailyResult.exercisesScore ?? 0.0
+        case "Alimentação":
+            return viewModel?.dailyResult.foodScore ?? 0.0
+        case "Sono":
+            return viewModel?.dailyResult.sleepScore ?? 0.0
+        default:
+            return 0.0
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
@@ -67,144 +115,73 @@ extension InitialViewController: UICollectionViewDataSource {
         case .tree:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TreeViewCell.self),
                                                           for: indexPath)
-            cell.layer.cornerRadius = 50
+            cell.layer.cornerRadius = 100
             cell.layer.masksToBounds = true
             (cell as? TreeViewCell)?.treeView.branchesScore = viewModel?.branchesScore ?? 0
             (cell as? TreeViewCell)?.treeView.soilScore = viewModel?.soilScore ?? 0
             return cell
-        default:
+        case .button(let imageName):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: InitialCollectionViewCell.self),
                                                           for: indexPath)
             cell.layer.cornerRadius = 50
             cell.layer.masksToBounds = true
+            (cell as? InitialCollectionViewCell)?.setup(data: imageName,
+                                                        type: indexPath.item > 3 ? .soil : .branches,
+                                                        value: score(for: imageName) / 10)
             return cell
         }
     }
     
-}
-
-class TreeViewCell: UICollectionViewCell {
-    
-    lazy var treeView = TreeView().notTranslating()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setup(branchesScore: Double, soilScore: Double) {
-        treeView.branchesScore = branchesScore
-        treeView.soilScore = soilScore
-    }
-    
-    fileprivate func setupViews() {
-        backgroundColor = .white
-        contentView.backgroundColor = .white
-        treeView.fill(view: contentView)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = data[indexPath.item]
+        switch item {
+        case .tree:
+            didTapTreeView()
+        case .button(let name):
+            if let criteria = BranchesCriteria.criteria(for: name) {
+                didTapCriteria(criteria: criteria)
+            } else if let criteria = SoilCriteria.criteria(for: name) {
+                didTapCriteria(criteria: criteria)
+            }
+        }
     }
     
 }
 
-class InitialCollectionViewCell: UICollectionViewCell {
+extension InitialViewController {
     
-    lazy var titleView = SimpleTitleView(title: "").notTranslating()
-    
-    func setup(data: String) {
-        titleView.title = data
+    fileprivate func didTapTreeView() {
+        let vc = TreeViewController()
+        vc.branchesScore = viewModel?.branchesScore ?? 0.0
+        vc.soilScore = viewModel?.soilScore ?? 0.0
+        present(vc, animated: true, completion: nil)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
+    fileprivate func didTapCriteria<T: Criteria>(criteria: T) {
+        let vc = CriteriaViewController(criteria: criteria)
+        vc.delegate = self
+        vc.presentationController?.delegate = self
+        present(vc, animated: true, completion: nil)
     }
+}
+
+extension InitialViewController: CriteriaViewControllerDelegate {
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
-    fileprivate func setupViews() {
-        backgroundColor = .white
-        contentView.backgroundColor = .white
-        titleView.fill(view: contentView)
+    func criteriaViewController<T>(_ viewController: CriteriaViewController<T>,
+                                   didAdd answer: Answer,
+                                   to criteria: T) where T : Criteria {
+        viewModel?.setScore(criteria: criteria, answer: answer)
+        collectionView.reloadData()
+        dismiss(animated: true, completion: nil)
     }
     
 }
 
-class InitialColectionViewLayout: UICollectionViewLayout {
+extension InitialViewController: UIAdaptivePresentationControllerDelegate {
     
-    let deviceWidth = UIScreen.main.bounds.width
-    lazy var deviceHeight: CGFloat = {
-        return self.collectionView?.frame.height ?? UIScreen.main.bounds.height
-    }()
-    let treeSize = CGFloat(100)
-    let cellSize = CGFloat(100)
-    
-    fileprivate var cache = [UICollectionViewLayoutAttributes]()
-    
-    fileprivate lazy var yOffsets = {
-        return [
-            CGFloat(50), CGFloat(20), CGFloat(50),
-            CGFloat(self.deviceHeight / 2 - self.treeSize / 2),
-            CGFloat(self.deviceHeight - (50 + self.cellSize)),
-            CGFloat(self.deviceHeight - (20 + self.cellSize)),
-            CGFloat(self.deviceHeight - (50 + self.cellSize))
-        ]
-    }()
-    
-    fileprivate lazy var xOffsets = {
-        return [
-            CGFloat(20), CGFloat(self.deviceWidth / 2 - self.cellSize / 2), CGFloat(self.deviceWidth - (cellSize + 20)),
-            CGFloat(self.deviceWidth / 2 - self.treeSize / 2),
-            CGFloat(20), CGFloat(self.deviceWidth / 2 - self.cellSize / 2), CGFloat(self.deviceWidth - (cellSize + 20)),
-        ]
-    }()
-    
-    override func prepare() {
-        guard cache.isEmpty,
-            let collectionView = collectionView
-            else {
-                return
-        }
-        
-        for item in 0..<collectionView.numberOfItems(inSection: 0) {
-            let indexPath = IndexPath(item: item, section: 0)
-            
-            let frame = CGRect(x: xOffsets[indexPath.item],
-                               y: yOffsets[indexPath.item],
-                               width: 100,
-                               height: 100)
-            let insetFrame = frame.insetBy(dx: 0, dy: 0)
-            let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-            attributes.frame = insetFrame
-            cache.append(attributes)
-        }
-    }
-    
-    override var collectionViewContentSize: CGSize {
-        return CGSize(width: deviceWidth, height: collectionView?.frame.height ?? 0)
-    }
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        var displayedAttributes = [UICollectionViewLayoutAttributes]()
-        
-        for attributes in cache {
-          if attributes.frame.intersects(rect) {
-            displayedAttributes.append(attributes)
-          }
-        }
-        
-        return displayedAttributes
-    }
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        let attributes = UICollectionViewLayoutAttributes()
-        attributes.size = CGSize(width: 100, height: 100)
-        cache.append(attributes)
-        return attributes
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        collectionView.reloadData()
     }
     
 }

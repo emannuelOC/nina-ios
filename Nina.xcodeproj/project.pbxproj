@@ -25,7 +25,7 @@
 		C960F758244530180044BB76 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74A244530180044BB76 /* PrimaryButtonView.swift */; };
 		C960F759244530180044BB76 /* UIColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74B244530180044BB76 /* UIColorUtils.swift */; };
 		C960F75A244530180044BB76 /* SimpleTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74C244530180044BB76 /* SimpleTitleView.swift */; };
-		C960F75B244530180044BB76 /* GenericCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74D244530180044BB76 /* GenericCell.swift */; };
+		C960F75B244530180044BB76 /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74D244530180044BB76 /* GenericTableViewCell.swift */; };
 		C960F75C244530180044BB76 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74E244530180044BB76 /* Primitives.swift */; };
 		C960F75D244530180044BB76 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74F244530180044BB76 /* GenericDataSource.swift */; };
 		C960F75E244530180044BB76 /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F750244530180044BB76 /* UIViewUtils.swift */; };
@@ -41,6 +41,11 @@
 		C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74924492F8700999C47 /* ShortTextInputView.swift */; };
 		C974D74C2449324200999C47 /* LongTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74B2449324200999C47 /* LongTextInputView.swift */; };
 		C974D74E2449339400999C47 /* OptionsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C974D74D2449339400999C47 /* OptionsInputView.swift */; };
+		C99E5BC4246AD4BE00A53224 /* InitialCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC3246AD4BE00A53224 /* InitialCollectionViewLayout.swift */; };
+		C99E5BC6246AD4E800A53224 /* InitialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC5246AD4E800A53224 /* InitialCollectionViewCell.swift */; };
+		C99E5BC8246AD5A100A53224 /* TreeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */; };
+		C99E5BCA246AD91A00A53224 /* ContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */; };
+		C99E5BCC246ADE0400A53224 /* GenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BCB246ADE0400A53224 /* GenericCollectionViewController.swift */; };
 		C9D6B195245884C6000BC23C /* CriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B194245884C6000BC23C /* CriteriaViewController.swift */; };
 		C9D6B19B2458DBD4000BC23C /* DayInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */; };
 		C9D6B19D2458E8FD000BC23C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */; };
@@ -95,7 +100,7 @@
 		C960F74A244530180044BB76 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
 		C960F74B244530180044BB76 /* UIColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorUtils.swift; sourceTree = "<group>"; };
 		C960F74C244530180044BB76 /* SimpleTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTitleView.swift; sourceTree = "<group>"; };
-		C960F74D244530180044BB76 /* GenericCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericCell.swift; sourceTree = "<group>"; };
+		C960F74D244530180044BB76 /* GenericTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
 		C960F74E244530180044BB76 /* Primitives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
 		C960F74F244530180044BB76 /* GenericDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
 		C960F750244530180044BB76 /* UIViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewUtils.swift; sourceTree = "<group>"; };
@@ -111,6 +116,11 @@
 		C974D74924492F8700999C47 /* ShortTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortTextInputView.swift; sourceTree = "<group>"; };
 		C974D74B2449324200999C47 /* LongTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTextInputView.swift; sourceTree = "<group>"; };
 		C974D74D2449339400999C47 /* OptionsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsInputView.swift; sourceTree = "<group>"; };
+		C99E5BC3246AD4BE00A53224 /* InitialCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCollectionViewLayout.swift; sourceTree = "<group>"; };
+		C99E5BC5246AD4E800A53224 /* InitialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCollectionViewCell.swift; sourceTree = "<group>"; };
+		C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCollectionViewCell.swift; sourceTree = "<group>"; };
+		C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewCell.swift; sourceTree = "<group>"; };
+		C99E5BCB246ADE0400A53224 /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
 		C9D6B194245884C6000BC23C /* CriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaViewController.swift; sourceTree = "<group>"; };
 		C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformationViewModel.swift; sourceTree = "<group>"; };
 		C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +199,9 @@
 				C960F73F24452EAC0044BB76 /* DailyResultViewController.swift */,
 				C9D6B1A42459B4C7000BC23C /* NotificationsViewController.swift */,
 				C970B051246773AE0017B218 /* InitialViewController.swift */,
+				C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */,
+				C99E5BC3246AD4BE00A53224 /* InitialCollectionViewLayout.swift */,
+				C99E5BC5246AD4E800A53224 /* InitialCollectionViewCell.swift */,
 				C970AE0D245E1AC50017B218 /* TreeViewController.swift */,
 				C960F74124452F1A0044BB76 /* DayInformationView.swift */,
 				C970B053246774650017B218 /* QuestionsInformation.swift */,
@@ -223,8 +236,9 @@
 		C960F743244530100044BB76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C99E5BCB246ADE0400A53224 /* GenericCollectionViewController.swift */,
 				C960F746244530180044BB76 /* CheckView.swift */,
-				C960F74D244530180044BB76 /* GenericCell.swift */,
+				C960F74D244530180044BB76 /* GenericTableViewCell.swift */,
 				C960F74F244530180044BB76 /* GenericDataSource.swift */,
 				C960F744244530180044BB76 /* IconView.swift */,
 				C960F74A244530180044BB76 /* PrimaryButtonView.swift */,
@@ -240,6 +254,7 @@
 				C960F74B244530180044BB76 /* UIColorUtils.swift */,
 				C960F750244530180044BB76 /* UIViewUtils.swift */,
 				C960F751244530180044BB76 /* ViewControllerTransition.swift */,
+				C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */,
 				C974D7452446489800999C47 /* QuestionView.swift */,
 				C974D74724492EF300999C47 /* AnswerView.swift */,
 				C970AE0B245E12480017B218 /* TreeView.swift */,
@@ -411,14 +426,19 @@
 				C960F70F24452D700044BB76 /* SceneDelegate.swift in Sources */,
 				C960F759244530180044BB76 /* UIColorUtils.swift in Sources */,
 				C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */,
-				C960F75B244530180044BB76 /* GenericCell.swift in Sources */,
+				C960F75B244530180044BB76 /* GenericTableViewCell.swift in Sources */,
+				C99E5BC6246AD4E800A53224 /* InitialCollectionViewCell.swift in Sources */,
+				C99E5BC4246AD4BE00A53224 /* InitialCollectionViewLayout.swift in Sources */,
 				C9D6B195245884C6000BC23C /* CriteriaViewController.swift in Sources */,
+				C99E5BCC246ADE0400A53224 /* GenericCollectionViewController.swift in Sources */,
 				C960F71724452D700044BB76 /* Nina.xcdatamodeld in Sources */,
 				C9D6B19F2458E9EA000BC23C /* ResultItemTableViewCell.swift in Sources */,
 				C970AE0E245E1AC50017B218 /* TreeViewController.swift in Sources */,
 				C960F756244530180044BB76 /* RegularNavigationController.swift in Sources */,
 				C960F758244530180044BB76 /* PrimaryButtonView.swift in Sources */,
 				C960F757244530180044BB76 /* SimpleTextView.swift in Sources */,
+				C99E5BC8246AD5A100A53224 /* TreeCollectionViewCell.swift in Sources */,
+				C99E5BCA246AD91A00A53224 /* ContainerCollectionViewCell.swift in Sources */,
 				C974D74824492EF300999C47 /* AnswerView.swift in Sources */,
 				C960F755244530180044BB76 /* SelectionTableViewCell.swift in Sources */,
 				C9D6B1A32458F556000BC23C /* ExerciseSummaryViewController.swift in Sources */,

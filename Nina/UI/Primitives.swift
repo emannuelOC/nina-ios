@@ -18,6 +18,7 @@ struct Color {
     static let secondary = UIColor(named: "PrimaryBackground") ?? UIColor.systemBackground
     static let terciary = UIColor.placeholderText
     static let white = UIColor(named: "RealWhite") ?? UIColor.systemBackground
+    static let green = #colorLiteral(red: 0.2187611534, green: 0.8774287565, blue: 0.5336593363, alpha: 1)
 }
 
 struct Font {
