@@ -14,8 +14,6 @@
 		C960F71C24452D730044BB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C960F71A24452D730044BB76 /* LaunchScreen.storyboard */; };
 		C960F72724452D730044BB76 /* NinaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F72624452D730044BB76 /* NinaTests.swift */; };
 		C960F73224452D730044BB76 /* NinaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F73124452D730044BB76 /* NinaUITests.swift */; };
-		C960F74024452EAC0044BB76 /* DailyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F73F24452EAC0044BB76 /* DailyResultViewController.swift */; };
-		C960F74224452F1A0044BB76 /* DayInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F74124452F1A0044BB76 /* DayInformationView.swift */; };
 		C960F752244530180044BB76 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F744244530180044BB76 /* IconView.swift */; };
 		C960F753244530180044BB76 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F745244530180044BB76 /* SelectionView.swift */; };
 		C960F754244530180044BB76 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F746244530180044BB76 /* CheckView.swift */; };
@@ -89,8 +87,6 @@
 		C960F72D24452D730044BB76 /* NinaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NinaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960F73124452D730044BB76 /* NinaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinaUITests.swift; sourceTree = "<group>"; };
 		C960F73324452D730044BB76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C960F73F24452EAC0044BB76 /* DailyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyResultViewController.swift; sourceTree = "<group>"; };
-		C960F74124452F1A0044BB76 /* DayInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformationView.swift; sourceTree = "<group>"; };
 		C960F744244530180044BB76 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		C960F745244530180044BB76 /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		C960F746244530180044BB76 /* CheckView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
@@ -196,14 +192,12 @@
 				C9FB90692454E6B100800AF9 /* HealthManager.swift */,
 				C960F71524452D700044BB76 /* Nina.xcdatamodeld */,
 				C9D6B1A22458F556000BC23C /* ExerciseSummaryViewController.swift */,
-				C960F73F24452EAC0044BB76 /* DailyResultViewController.swift */,
 				C9D6B1A42459B4C7000BC23C /* NotificationsViewController.swift */,
 				C970B051246773AE0017B218 /* InitialViewController.swift */,
 				C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */,
 				C99E5BC3246AD4BE00A53224 /* InitialCollectionViewLayout.swift */,
 				C99E5BC5246AD4E800A53224 /* InitialCollectionViewCell.swift */,
 				C970AE0D245E1AC50017B218 /* TreeViewController.swift */,
-				C960F74124452F1A0044BB76 /* DayInformationView.swift */,
 				C970B053246774650017B218 /* QuestionsInformation.swift */,
 				C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */,
 				C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */,
@@ -406,11 +400,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C960F74024452EAC0044BB76 /* DailyResultViewController.swift in Sources */,
 				C960F752244530180044BB76 /* IconView.swift in Sources */,
 				C960F75C244530180044BB76 /* Primitives.swift in Sources */,
 				C970B052246773AE0017B218 /* InitialViewController.swift in Sources */,
-				C960F74224452F1A0044BB76 /* DayInformationView.swift in Sources */,
 				C960F70D24452D700044BB76 /* AppDelegate.swift in Sources */,
 				C960F75A244530180044BB76 /* SimpleTitleView.swift in Sources */,
 				C970AE122460F4000017B218 /* Nina.swift in Sources */,

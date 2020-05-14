@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import HealthKit
 
 class ExerciseSummaryViewController: UIViewController {
     
-    let summary: HKActivitySummary
+    let minutes: Double
     let date: Date
     
-    init(summary: HKActivitySummary, date: Date) {
-        self.summary = summary
+    init(minutes: Double, date: Date) {
+        self.minutes = minutes
         self.date = date
         super.init(nibName: nil, bundle: nil)
         setupViews()
@@ -34,7 +33,7 @@ class ExerciseSummaryViewController: UIViewController {
             suffix = "no dia \(formatter.string(from: date))."
         }
         let text = "Como você usa Apple Watch, é possível obter o seu tempo de exercícios pelo HealthKit."
-            + " Você realizou \(self.summary.appleExerciseTime.doubleValue(for: .minute())) minutos de exercício "
+            + " Você realizou \(minutes) minutos de exercício "
             + suffix
         view.fill(with: [
             SimpleTitleView(title: "Exercícios"),

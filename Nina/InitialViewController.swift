@@ -153,7 +153,12 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
         case .tree:
             didTapTreeView()
         case .button(let name):
-            if let criteria = BranchesCriteria.criteria(for: name) {
+            if name == "Exercícios" && (healthManager?.isAvailable ?? false) {
+                let vc = ExerciseSummaryViewController(minutes: viewModel?.dailyResult.exercisesScore ?? 0.0,
+                                                       date: viewModel?.dailyResult.date ?? Date())
+                vc.presentationController?.delegate = self
+                present(vc, animated: true, completion: nil)
+            } else if let criteria = BranchesCriteria.criteria(for: name) {
                 didTapCriteria(criteria: criteria)
             } else if let criteria = SoilCriteria.criteria(for: name) {
                 didTapCriteria(criteria: criteria)
