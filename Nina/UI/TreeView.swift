@@ -122,9 +122,11 @@ class TreeView: UIView {
         let startColors = [#colorLiteral(red: 0.4207496841, green: 0.4622125972, blue: 0.378383644, alpha: 0.75), #colorLiteral(red: 0.5447498381, green: 0.4133276306, blue: 0.3033174181, alpha: 0.75), #colorLiteral(red: 0.783759715, green: 0.5946758004, blue: 0.4363984283, alpha: 0.75), #colorLiteral(red: 0.9803921569, green: 1, blue: 0.5019607843, alpha: 0.75)]
         let endColors = [#colorLiteral(red: 0.0594765504, green: 0.1717940415, blue: 0.09232076838, alpha: 1), #colorLiteral(red: 0.3591726036, green: 0.2725486673, blue: 0.2004464378, alpha: 1), #colorLiteral(red: 0.5823348445, green: 0.4418894543, blue: 0.3249884429, alpha: 1), #colorLiteral(red: 0.8117647059, green: 0.4588235294, blue: 0.262745098, alpha: 1)]
         
+        let index = min(Int(soilScore/3.0), 3)
+        
         return [
-            startColors[Int(soilScore/3.0)],
-            endColors[Int(soilScore/3.0)]
+            startColors[index],
+            endColors[index]
         ]
     }
     
