@@ -17,12 +17,16 @@ class DayInformationViewModel: DayInformationViewModelType {
     
     var context: NSManagedObjectContext
     
-    lazy var dailyResult: DailyResult = {
-        return setupDailyResult()
-    }()
+    var dailyResult: DailyResult!
     
     init(context: NSManagedObjectContext) {
         self.context = context
+        self.dailyResult = setupDailyResult()
+    }
+    
+    init(context: NSManagedObjectContext, result: DailyResult) {
+        self.context = context
+        self.dailyResult = result
     }
     
     func setScore<T>(criteria: T, answer: Answer) where T : Criteria {

@@ -30,6 +30,8 @@ class InitialViewController: UIViewController {
         return Calendar.current.isDateInToday(date)
     }
     
+    var previousResult: DailyResult?
+    
     lazy var collectionView: UICollectionView = {
         let layout = InitialColectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -44,6 +46,14 @@ class InitialViewController: UIViewController {
         return collectionView
     }()
     
+    init(result: DailyResult? = nil) {
+        self.previousResult = result
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +64,9 @@ class InitialViewController: UIViewController {
     }
     
     fileprivate func setupManager() {
+        if !isToday {
+            return
+        }
         healthManager = HealthManager()
         healthManager?.retrieveExercises(completion: { [weak self] (minutes) in
             guard let self = self else { return }
@@ -69,7 +82,11 @@ class InitialViewController: UIViewController {
     
     fileprivate func setupViewModel() {
         if let context = view.context {
-            viewModel = DayInformationViewModel(context: context)
+            guard let result = previousResult else {
+                viewModel = DayInformationViewModel(context: context)
+                return
+            }
+            viewModel = DayInformationViewModel(context: context, result: result)
         }
     }
     
@@ -156,6 +173,9 @@ extension InitialViewController {
     }
     
     fileprivate func didTapCriteria<T: Criteria>(criteria: T) {
+        if !isToday {
+            return
+        }
         let vc = CriteriaViewController(criteria: criteria)
         vc.delegate = self
         vc.presentationController?.delegate = self

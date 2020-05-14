@@ -65,7 +65,7 @@ class InitialCollectionViewCell: UICollectionViewCell {
             gradientLayer.startPoint = CGPoint(x: 0, y: 0)
             gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         } else {
-            gradientLayer.colors = [#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.6677761884)].map { $0.cgColor }
+            gradientLayer.colors = [#colorLiteral(red: 0.3568934043, green: 0.3844436305, blue: 0.425847616, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6677761884)].map { $0.cgColor }
             gradientLayer.startPoint = CGPoint(x: 1, y: 1)
             gradientLayer.endPoint = CGPoint(x: -1.3, y: -1.3)
         }
