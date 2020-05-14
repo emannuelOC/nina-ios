@@ -9,10 +9,16 @@
 import UIKit
 
 class InitialCollectionViewCell: UICollectionViewCell {
+        
+    lazy var circleView = UIView().notTranslating()
     
-    enum GradientType {
-        case branches, soil
-    }
+    lazy var label: UILabel = {
+        let label = UILabel().notTranslating()
+        if let font = Font.smallRegular {
+            label.font = font
+        }
+        return label
+    }()
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView().notTranslating()
@@ -24,14 +30,11 @@ class InitialCollectionViewCell: UICollectionViewCell {
     let borderLayer = CAShapeLayer()
     let progressLayer = CAShapeLayer()
     
-    func setup(data: String, type: GradientType, value: Double) {
+    func setup(data: String, done: Bool) {
         imageView.image = UIImage(named: data)
-        setupLayer(type: type)
-        var color = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-        if type == .soil {
-            color = #colorLiteral(red: 0.8117647059, green: 0.3483233194, blue: 0.4883898002, alpha: 1)
-        }
-        setupProgress(value: value, color: color)
+        label.text = data
+        setupLayer(done: done)
+        setupBorderLayer()
     }
     
     override init(frame: CGRect) {
@@ -46,24 +49,23 @@ class InitialCollectionViewCell: UICollectionViewCell {
     fileprivate func setupViews() {
         backgroundColor = .white
         contentView.backgroundColor = .white
-        imageView.fill(view: contentView, margin: 30)
-        setupBorderLayer()
+        circleView.constraintSquare(side: 80)
+        imageView.fill(view: circleView, margin: 20)
+        contentView.fill(with: [circleView, label], spacing: 8)
     }
     
-    fileprivate func setupLayer(type: GradientType) {
-        let inset = CGFloat(18)
-        gradientLayer.frame = bounds.inset(by: UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset))
+    fileprivate func setupLayer(done: Bool) {
+        gradientLayer.frame = circleView.bounds.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         gradientLayer.cornerRadius = gradientLayer.frame.width / 2
         if gradientLayer.superlayer == nil {
-            contentView.layer.insertSublayer(gradientLayer, at: 0)
+            circleView.layer.insertSublayer(gradientLayer, at: 0)
         }
-        switch type {
-        case .branches:
+        if done {
             gradientLayer.colors = [#colorLiteral(red: 0.2257917876, green: 0.1092537814, blue: 0.8549019694, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)].map { $0.cgColor }
             gradientLayer.startPoint = CGPoint(x: 0, y: 0)
             gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        case .soil:
-            gradientLayer.colors = [#colorLiteral(red: 0.8117647059, green: 0.3483233194, blue: 0.4883898002, alpha: 1), #colorLiteral(red: 0.9803921569, green: 1, blue: 0.5019607843, alpha: 0.75)].map { $0.cgColor }
+        } else {
+            gradientLayer.colors = [#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.6677761884)].map { $0.cgColor }
             gradientLayer.startPoint = CGPoint(x: 1, y: 1)
             gradientLayer.endPoint = CGPoint(x: -1.3, y: -1.3)
         }
@@ -83,13 +85,9 @@ class InitialCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func setupBorderLayer() {
-        let path = UIBezierPath(ovalIn: bounds.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)))
-        borderLayer.fillColor = UIColor.clear.cgColor
-        borderLayer.strokeColor = Color.secondary.cgColor
-        borderLayer.lineWidth = 6
-        borderLayer.strokeEnd = 1
-        borderLayer.path = path.cgPath
-        contentView.layer.addSublayer(borderLayer)
+        circleView.layer.cornerRadius = circleView.frame.width / 2
+        circleView.layer.borderColor = Color.secondary.cgColor
+        circleView.layer.borderWidth = 10
     }
     
 }

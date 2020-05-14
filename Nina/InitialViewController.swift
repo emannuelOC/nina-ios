@@ -87,22 +87,22 @@ class InitialViewController: UIViewController {
 
 extension InitialViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    fileprivate func score(for criteriaName: String) -> Double {
+    fileprivate func isDone(criteriaName: String) -> Bool {
         switch criteriaName {
         case "Leitura":
-            return viewModel?.dailyResult.readingScore ?? 0.0
+            return viewModel?.dailyResult.readingAdded ?? false
         case "Idiomas":
-            return viewModel?.dailyResult.languagesScore ?? 0.0
+            return viewModel?.dailyResult.languagesAdded ?? false
         case "Habilidades":
-            return viewModel?.dailyResult.skillsScore ?? 0.0
+            return viewModel?.dailyResult.skillsAdded ?? false
         case "Exercícios":
-            return viewModel?.dailyResult.exercisesScore ?? 0.0
+            return viewModel?.dailyResult.exercisesAdded ?? false
         case "Alimentação":
-            return viewModel?.dailyResult.foodScore ?? 0.0
+            return viewModel?.dailyResult.foodAdded ?? false
         case "Sono":
-            return viewModel?.dailyResult.sleepScore ?? 0.0
+            return viewModel?.dailyResult.sleepAdded ?? false
         default:
-            return 0.0
+            return false
         }
     }
     
@@ -123,11 +123,9 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
         case .button(let imageName):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: InitialCollectionViewCell.self),
                                                           for: indexPath)
-            cell.layer.cornerRadius = 50
+
             cell.layer.masksToBounds = true
-            (cell as? InitialCollectionViewCell)?.setup(data: imageName,
-                                                        type: indexPath.item > 3 ? .soil : .branches,
-                                                        value: score(for: imageName) / 10)
+            (cell as? InitialCollectionViewCell)?.setup(data: imageName, done: isDone(criteriaName: imageName))
             return cell
         }
     }

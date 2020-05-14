@@ -23,6 +23,7 @@ struct Color {
 
 struct Font {
     static let regular = UIFont(name: "Helvetica", size: 20)
+    static let smallRegular = UIFont(name: "Helvetica", size: 16)
     static let bold = UIFont(name: "Helvetica Bold", size: 20)
 }
 

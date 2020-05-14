@@ -31,6 +31,7 @@ extension UIView {
               margin: CGFloat = 0,
               axis: NSLayoutConstraint.Axis = .vertical,
               alignment: UIStackView.Alignment = .center,
+              spacing: CGFloat = 0,
               distribution: UIStackView.Distribution = .fillProportionally) {
         
         let stackView = UIStackView(arrangedSubviews: views).notTranslating()
@@ -38,6 +39,7 @@ extension UIView {
         stackView.layoutMargins = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
         stackView.alignment = alignment
         stackView.distribution = distribution
+        stackView.spacing = spacing
         
         stackView.fill(view: self, flexibleBottom: true)
     }
