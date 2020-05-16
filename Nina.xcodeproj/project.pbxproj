@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93EAEE5246CDD3C00799BB8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93EAEE4246CDD3C00799BB8 /* GradientView.swift */; };
 		C960F70D24452D700044BB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F70C24452D700044BB76 /* AppDelegate.swift */; };
 		C960F70F24452D700044BB76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C960F70E24452D700044BB76 /* SceneDelegate.swift */; };
 		C960F71724452D700044BB76 /* Nina.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C960F71524452D700044BB76 /* Nina.xcdatamodeld */; };
@@ -74,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93EAEE4246CDD3C00799BB8 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C960F70924452D700044BB76 /* Nina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960F70C24452D700044BB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C960F70E24452D700044BB76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				C960F751244530180044BB76 /* ViewControllerTransition.swift */,
 				C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */,
 				C974D7452446489800999C47 /* QuestionView.swift */,
+				C93EAEE4246CDD3C00799BB8 /* GradientView.swift */,
 				C974D74724492EF300999C47 /* AnswerView.swift */,
 				C970AE0B245E12480017B218 /* TreeView.swift */,
 			);
@@ -403,6 +406,7 @@
 				C960F752244530180044BB76 /* IconView.swift in Sources */,
 				C960F75C244530180044BB76 /* Primitives.swift in Sources */,
 				C970B052246773AE0017B218 /* InitialViewController.swift in Sources */,
+				C93EAEE5246CDD3C00799BB8 /* GradientView.swift in Sources */,
 				C960F70D24452D700044BB76 /* AppDelegate.swift in Sources */,
 				C960F75A244530180044BB76 /* SimpleTitleView.swift in Sources */,
 				C970AE122460F4000017B218 /* Nina.swift in Sources */,
