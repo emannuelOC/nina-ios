@@ -25,13 +25,12 @@ class RegularNavigationController: UINavigationController {
     }
     
     func setupAppearance() {
-        guard let font = Font.regular else { return }
         navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: Color.primary,
-            NSAttributedString.Key.font: font
+            NSAttributedString.Key.foregroundColor: Color.primaryButton,
+            NSAttributedString.Key.font: Font.regular
         ]
         
-        navigationBar.tintColor = Color.primary
+        navigationBar.tintColor = Color.primaryButton
         navigationBar.barTintColor = Color.secondary
         navigationBar.backgroundColor = Color.secondary
         navigationBar.isTranslucent = false

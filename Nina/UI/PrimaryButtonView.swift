@@ -17,10 +17,12 @@ class PrimaryButtonView: UIView {
     }
     
     lazy var button: UIButton = {
-        let button = UIButton()
+        let button = GradientButton()
             .notTranslating()
-            .backgrounded(color: Color.primary)
             .radiusConfigured(radius: Radius.normal)
+        button.colors = [Color.primaryButton, Color.gradientButton]
+        button.startPoint = CGPoint(x: 0, y: 0.5)
+        button.endPoint = CGPoint(x: 1, y: 0.5)
         button.setTitleColor(Color.secondary, for: .normal)
         button.titleLabel?.font = Font.regular
         button.setContentHuggingPriority(.defaultHigh, for: .vertical)

@@ -12,8 +12,8 @@ class InitialCollectionViewCell: UICollectionViewCell {
         
     lazy var circleView: GradientView = {
         let circleView = GradientView().notTranslating()
-        circleView.layer.cornerRadius = 40
-        circleView.layer.borderColor = Color.secondary.cgColor
+        circleView.layer.cornerRadius = Radius.big
+        circleView.layer.borderColor = Color.border.cgColor
         circleView.layer.borderWidth = 10
         circleView.layer.masksToBounds = true
         return circleView
@@ -21,9 +21,7 @@ class InitialCollectionViewCell: UICollectionViewCell {
     
     lazy var label: UILabel = {
         let label = UILabel().notTranslating()
-        if let font = Font.smallRegular {
-            label.font = font
-        }
+        label.font = Font.smallRegular
         return label
     }()
     
@@ -59,8 +57,8 @@ class InitialCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func setupViews() {
-        backgroundColor = .white
-        contentView.backgroundColor = .white
+        backgroundColor = Color.secondary
+        contentView.backgroundColor = Color.secondary
         circleView.constraintSquare(side: 80)
         imageView.fill(view: circleView, margin: 20)
         contentView.fill(with: [circleView, label], spacing: 8)

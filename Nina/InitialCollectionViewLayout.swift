@@ -15,7 +15,7 @@ class InitialColectionViewLayout: UICollectionViewLayout {
         return self.collectionView?.frame.height ?? UIScreen.main.bounds.height
     }()
     let treeSize = CGFloat(200)
-    let cellSize = CGFloat(100)
+    let cellSize = CGFloat(120)
     
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
     

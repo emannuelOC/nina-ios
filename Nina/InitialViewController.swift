@@ -36,7 +36,7 @@ class InitialViewController: UIViewController {
         let layout = InitialColectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = Color.white
+        collectionView.backgroundColor = Color.secondary
         collectionView.register(InitialCollectionViewCell.self,
                                 forCellWithReuseIdentifier: String(describing: InitialCollectionViewCell.self))
         collectionView.register(TreeViewCell.self,
@@ -76,7 +76,7 @@ class InitialViewController: UIViewController {
     }
     
     fileprivate func setupViews() {
-        view.backgroundColor = Color.white
+        view.backgroundColor = Color.secondary
         collectionView.fill(view: view)
     }
     
@@ -132,7 +132,7 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
         case .tree:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TreeViewCell.self),
                                                           for: indexPath)
-            cell.layer.cornerRadius = 100
+            cell.layer.cornerRadius = Radius.huge
             cell.layer.masksToBounds = true
             (cell as? TreeViewCell)?.treeView.branchesScore = viewModel?.branchesScore ?? 0
             (cell as? TreeViewCell)?.treeView.soilScore = viewModel?.soilScore ?? 0

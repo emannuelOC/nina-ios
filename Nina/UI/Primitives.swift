@@ -15,20 +15,26 @@ struct Margin {
 
 struct Color {
     static let primary = UIColor(named: "PrimaryText") ?? UIColor.label
+    static let primaryButton = UIColor(named: "PrimaryButton") ?? UIColor.blue
     static let secondary = UIColor(named: "PrimaryBackground") ?? UIColor.systemBackground
     static let terciary = UIColor.placeholderText
     static let white = UIColor(named: "RealWhite") ?? UIColor.systemBackground
     static let green = #colorLiteral(red: 0.2187611534, green: 0.8774287565, blue: 0.5336593363, alpha: 1)
+    static let gradientButton = UIColor(named: "ButtonGradient") ?? UIColor.blue
+    static let border = UIColor(named: "Border") ?? UIColor.gray
 }
 
 struct Font {
-    static let regular = UIFont(name: "Helvetica", size: 20)
-    static let smallRegular = UIFont(name: "Helvetica", size: 16)
-    static let bold = UIFont(name: "Helvetica Bold", size: 20)
+    
+    static let regular = UIFont.preferredFont(forTextStyle: .body)
+    static let smallRegular = UIFont.preferredFont(forTextStyle: .caption1)
+    static let bold = UIFont.preferredFont(forTextStyle: .title1)
 }
 
 struct Radius {
-    static let normal = CGFloat(4)
+    static let normal = CGFloat(10)
+    static let big = CGFloat(20)
+    static let huge = CGFloat(40)
 }
 
 struct Images {
