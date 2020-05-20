@@ -28,10 +28,10 @@ class TreeViewCell: UICollectionViewCell {
     
     fileprivate func setupViews() {
         layer.borderWidth = 10
-        layer.borderColor = Color.secondary.cgColor
+        layer.borderColor = Color.border.cgColor
         layer.masksToBounds = false
-        backgroundColor = .white
-        contentView.backgroundColor = .white
+        backgroundColor = Color.secondary
+        contentView.backgroundColor = Color.secondary
         treeView.fill(view: contentView)
     }
     

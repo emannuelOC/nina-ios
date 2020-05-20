@@ -33,6 +33,7 @@ class GradientView: UIView {
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         gradientLayer.frame = self.bounds
+        gradientLayer.cornerRadius = layer.cornerRadius
     }
 
     override public func draw(_ rect: CGRect) {
@@ -68,6 +69,7 @@ class GradientButton: UIButton {
     }
     
     let gradientLayer = CAGradientLayer()
+    let shadowLayer = CALayer()
 
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)

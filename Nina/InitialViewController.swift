@@ -132,7 +132,7 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
         case .tree:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TreeViewCell.self),
                                                           for: indexPath)
-            cell.layer.cornerRadius = Radius.huge
+            cell.layer.cornerRadius = 100
             cell.layer.masksToBounds = true
             (cell as? TreeViewCell)?.treeView.branchesScore = viewModel?.branchesScore ?? 0
             (cell as? TreeViewCell)?.treeView.soilScore = viewModel?.soilScore ?? 0

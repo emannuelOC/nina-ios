@@ -12,9 +12,9 @@ class InitialCollectionViewCell: UICollectionViewCell {
         
     lazy var circleView: GradientView = {
         let circleView = GradientView().notTranslating()
-        circleView.layer.cornerRadius = Radius.big
+        circleView.layer.cornerRadius = 40
         circleView.layer.borderColor = Color.border.cgColor
-        circleView.layer.borderWidth = 10
+        circleView.layer.borderWidth = 8
         circleView.layer.masksToBounds = true
         return circleView
     }()
