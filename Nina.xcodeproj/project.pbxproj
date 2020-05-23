@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,9 @@
 		C99E5BC8246AD5A100A53224 /* TreeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */; };
 		C99E5BCA246AD91A00A53224 /* ContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */; };
 		C99E5BCC246ADE0400A53224 /* GenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BCB246ADE0400A53224 /* GenericCollectionViewController.swift */; };
+		C9CCE7632476BD660081F496 /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCE7622476BD660081F496 /* DynamicViewController.swift */; };
+		C9CCE7662476C0420081F496 /* Bifrost in Frameworks */ = {isa = PBXBuildFile; productRef = C9CCE7652476C0420081F496 /* Bifrost */; };
+		C9CCE7682479DBCA0081F496 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCE7672479DBCA0081F496 /* Secrets.swift */; };
 		C9D6B195245884C6000BC23C /* CriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B194245884C6000BC23C /* CriteriaViewController.swift */; };
 		C9D6B19B2458DBD4000BC23C /* DayInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */; };
 		C9D6B19D2458E8FD000BC23C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */; };
@@ -119,6 +122,8 @@
 		C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewCell.swift; sourceTree = "<group>"; };
 		C99E5BCB246ADE0400A53224 /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
+		C9CCE7622476BD660081F496 /* DynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
+		C9CCE7672479DBCA0081F496 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		C9D6B194245884C6000BC23C /* CriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaViewController.swift; sourceTree = "<group>"; };
 		C9D6B19A2458DBD4000BC23C /* DayInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInformationViewModel.swift; sourceTree = "<group>"; };
 		C9D6B19C2458E8FD000BC23C /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CCE7662476C0420081F496 /* Bifrost in Frameworks */,
 				C9FB90682454E65500800AF9 /* HealthKit.framework in Frameworks */,
 				C9D6B1A7245B98AF000BC23C /* CloudKit.framework in Frameworks */,
 			);
@@ -188,6 +194,7 @@
 				C960F70C24452D700044BB76 /* AppDelegate.swift */,
 				C970AE112460F4000017B218 /* Nina.swift */,
 				C960F70E24452D700044BB76 /* SceneDelegate.swift */,
+				C9CCE7622476BD660081F496 /* DynamicViewController.swift */,
 				C960F71824452D730044BB76 /* Assets.xcassets */,
 				C960F71A24452D730044BB76 /* LaunchScreen.storyboard */,
 				C960F71D24452D730044BB76 /* Info.plist */,
@@ -207,6 +214,7 @@
 				C9D6B19E2458E9EA000BC23C /* ResultItemTableViewCell.swift */,
 				C9D6B194245884C6000BC23C /* CriteriaViewController.swift */,
 				C970B03E24635BB30017B218 /* Colors.xcassets */,
+				C9CCE7672479DBCA0081F496 /* Secrets.swift */,
 			);
 			path = Nina;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 			);
 			name = Nina;
 			packageProductDependencies = (
+				C9CCE7652476C0420081F496 /* Bifrost */,
 			);
 			productName = Nina;
 			productReference = C960F70924452D700044BB76 /* Nina.app */;
@@ -359,6 +368,7 @@
 			);
 			mainGroup = C960F70024452D700044BB76;
 			packageReferences = (
+				C9CCE7642476C0420081F496 /* XCRemoteSwiftPackageReference "bifrost" */,
 			);
 			productRefGroup = C960F70A24452D700044BB76 /* Products */;
 			projectDirPath = "";
@@ -408,6 +418,7 @@
 				C970B052246773AE0017B218 /* InitialViewController.swift in Sources */,
 				C93EAEE5246CDD3C00799BB8 /* GradientView.swift in Sources */,
 				C960F70D24452D700044BB76 /* AppDelegate.swift in Sources */,
+				C9CCE7682479DBCA0081F496 /* Secrets.swift in Sources */,
 				C960F75A244530180044BB76 /* SimpleTitleView.swift in Sources */,
 				C970AE122460F4000017B218 /* Nina.swift in Sources */,
 				C9D6B19D2458E8FD000BC23C /* ResultsViewController.swift in Sources */,
@@ -421,6 +432,7 @@
 				C974D7462446489800999C47 /* QuestionView.swift in Sources */,
 				C960F70F24452D700044BB76 /* SceneDelegate.swift in Sources */,
 				C960F759244530180044BB76 /* UIColorUtils.swift in Sources */,
+				C9CCE7632476BD660081F496 /* DynamicViewController.swift in Sources */,
 				C974D74A24492F8700999C47 /* ShortTextInputView.swift in Sources */,
 				C960F75B244530180044BB76 /* GenericTableViewCell.swift in Sources */,
 				C99E5BC6246AD4E800A53224 /* InitialCollectionViewCell.swift in Sources */,
@@ -770,6 +782,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9CCE7642476C0420081F496 /* XCRemoteSwiftPackageReference "bifrost" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/emannuelOC/bifrost.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9CCE7652476C0420081F496 /* Bifrost */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CCE7642476C0420081F496 /* XCRemoteSwiftPackageReference "bifrost" */;
+			productName = Bifrost;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C960F71524452D700044BB76 /* Nina.xcdatamodeld */ = {
