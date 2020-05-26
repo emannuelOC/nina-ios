@@ -30,6 +30,8 @@ class InitialViewController: UIViewController {
         return Calendar.current.isDateInToday(date)
     }
     
+    var isExercisesAvailable: Bool?
+    
     var previousResult: DailyResult?
     
     lazy var collectionView: UICollectionView = {
@@ -69,9 +71,13 @@ class InitialViewController: UIViewController {
         }
         healthManager = HealthManager()
         healthManager?.retrieveExercises(completion: { [weak self] (minutes) in
-            guard let self = self else { return }
-            self.viewModel?.setScore(criteria: SoilCriteria.exercises, answer: .number(minutes))
-            self.collectionView.reloadData()
+            guard let minutes = minutes else {
+                    self?.isExercisesAvailable = false
+                    return
+            }
+            self?.isExercisesAvailable = true
+            self?.viewModel?.setScore(criteria: SoilCriteria.exercises, answer: .number(min(minutes/30, 10)))
+            self?.collectionView.reloadData()
         })
     }
     
@@ -94,9 +100,10 @@ class InitialViewController: UIViewController {
         if !isToday {
             return
         }
-        if healthManager?.isAvailable ?? false {
+        if let score = healthManager?.exercises,
+            healthManager?.isAvailable ?? false {
             viewModel?.setScore(criteria: SoilCriteria.exercises,
-                                answer: .number(healthManager?.exercises ?? 0.0))
+                                answer: .number(score))
         }
     }
     
@@ -153,17 +160,45 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
         case .tree:
             didTapTreeView()
         case .button(let name):
-            if name == "Exercícios" && (healthManager?.isAvailable ?? false) {
-                let vc = ExerciseSummaryViewController(minutes: viewModel?.dailyResult.exercisesScore ?? 0.0,
-                                                       date: viewModel?.dailyResult.date ?? Date())
-                vc.presentationController?.delegate = self
-                present(vc, animated: true, completion: nil)
+            if name == "Exercícios" {
+               presentExercises()
             } else if let criteria = BranchesCriteria.criteria(for: name) {
                 didTapCriteria(criteria: criteria)
             } else if let criteria = SoilCriteria.criteria(for: name) {
                 didTapCriteria(criteria: criteria)
             }
         }
+    }
+    
+    fileprivate func presentExercises() {
+        if let isAvailable = isExercisesAvailable {
+            if isAvailable {
+                presentWatchExercises(score: viewModel?.dailyResult.exercisesScore ?? 0.0)
+            } else {
+                presentUserInputExercises()
+            }
+        } else {
+            healthManager?.retrieveExercises(completion: { (score) in
+                guard let score = score else {
+                    self.presentUserInputExercises()
+                    return
+                }
+                self.presentWatchExercises(score: score)
+            })
+        }
+    }
+    
+    fileprivate func presentUserInputExercises() {
+        if let criteria = SoilCriteria.criteria(for: "Exercícios") {
+            self.didTapCriteria(criteria: criteria)
+        }
+    }
+    
+    fileprivate func presentWatchExercises(score: Double) {
+        let vc = ExerciseSummaryViewController(minutes: score,
+                                               date: viewModel?.dailyResult.date ?? Date())
+        vc.presentationController?.delegate = self
+        present(vc, animated: true, completion: nil)
     }
     
 }

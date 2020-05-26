@@ -14,7 +14,7 @@ class HealthManager {
     
     var isAvailable = false
     
-    var exercises = 0.0
+    var exercises: Double?
     
     let log = Nina.log(for: HealthManager.self)
     
@@ -22,14 +22,10 @@ class HealthManager {
         authorizeHealthKit()
     }
     
-    func retrieveExercises(completion: @escaping (Double) -> Void) {
+    func retrieveExercises(completion: @escaping (Double?) -> Void) {
         let query = HKActivitySummaryQuery(predicate: nil) { (query, summaries, error) in
             DispatchQueue.main.async {
-                guard let summary = summaries?.last else {
-                    completion(0.0)
-                    return
-                }
-                let exercises = (summary.appleExerciseTime.doubleValue(for: .minute()))
+                let exercises = (summaries?.last?.appleExerciseTime.doubleValue(for: .minute()))
                 self.exercises = exercises
                 completion(exercises)
             }
