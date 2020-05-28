@@ -42,7 +42,7 @@ class DayInformationViewModel: DayInformationViewModelType {
     }
     
     var soilScore: Double {
-        return (dailyResult.exercisesScore + dailyResult.foodScore + dailyResult.sleepScore) / 3.0
+        return (min(dailyResult.exercisesScore, 10) + dailyResult.foodScore + dailyResult.sleepScore) / 3.0
     }
     
     fileprivate func setBranchesScore(criteria: BranchesCriteria, answer: Answer) {

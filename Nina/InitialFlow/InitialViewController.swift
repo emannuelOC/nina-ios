@@ -76,7 +76,7 @@ class InitialViewController: UIViewController {
                     return
             }
             self?.isExercisesAvailable = true
-            self?.viewModel?.setScore(criteria: SoilCriteria.exercises, answer: .number(min(minutes/30, 10)))
+            self?.viewModel?.setScore(criteria: SoilCriteria.exercises, answer: .number(minutes / 3))
             self?.collectionView.reloadData()
         })
     }
@@ -195,7 +195,7 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     fileprivate func presentWatchExercises(score: Double) {
-        let vc = ExerciseSummaryViewController(minutes: score,
+        let vc = ExerciseSummaryViewController(minutes: score * 3,
                                                date: viewModel?.dailyResult.date ?? Date())
         vc.presentationController?.delegate = self
         present(vc, animated: true, completion: nil)

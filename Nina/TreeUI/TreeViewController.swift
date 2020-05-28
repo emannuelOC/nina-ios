@@ -41,7 +41,8 @@ class TreeViewController: UIViewController {
             branchesTitleView,
             SimpleTextView(text: "Os ramos representam a sua reserva cognitiva"),
             soilTitleView,
-            SimpleTextView(text: "O solo representa a saúde do seu tecido cerebral")
+            SimpleTextView(text: "O solo representa a saúde do seu tecido cerebral"),
+            SimpleTextView(text: "")
         ])
         
         treeView.constraintSquare(side: 200)
