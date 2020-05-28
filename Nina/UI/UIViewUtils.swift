@@ -87,6 +87,14 @@ extension UIView {
     
 }
 
+extension UIViewController {
+    
+    var isDarkModeOn: Bool {
+        return self.traitCollection.userInterfaceStyle == .dark
+    }
+    
+}
+
 ///////////////////////////////////////////////////////////////////
 protocol Translatable: class {
     func translate()
