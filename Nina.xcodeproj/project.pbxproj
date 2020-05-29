@@ -44,7 +44,6 @@
 		C99E5BC6246AD4E800A53224 /* InitialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC5246AD4E800A53224 /* InitialCollectionViewCell.swift */; };
 		C99E5BC8246AD5A100A53224 /* TreeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */; };
 		C99E5BCA246AD91A00A53224 /* ContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */; };
-		C99E5BCC246ADE0400A53224 /* GenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BCB246ADE0400A53224 /* GenericCollectionViewController.swift */; };
 		C9AA3ABE2481C304006E3ECD /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = C9AA3ABD2481C304006E3ECD /* SnapshotTesting */; };
 		C9CCE7632476BD660081F496 /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCE7622476BD660081F496 /* DynamicViewController.swift */; };
 		C9CCE7662476C0420081F496 /* Bifrost in Frameworks */ = {isa = PBXBuildFile; productRef = C9CCE7652476C0420081F496 /* Bifrost */; };
@@ -121,7 +120,6 @@
 		C99E5BC5246AD4E800A53224 /* InitialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCollectionViewCell.swift; sourceTree = "<group>"; };
 		C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCollectionViewCell.swift; sourceTree = "<group>"; };
-		C99E5BCB246ADE0400A53224 /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
 		C9CCE7622476BD660081F496 /* DynamicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
 		C9CCE7672479DBCA0081F496 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secrets.swift; path = ../Secrets.swift; sourceTree = "<group>"; };
 		C9D6B194245884C6000BC23C /* CriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaViewController.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 		C960F743244530100044BB76 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C99E5BCB246ADE0400A53224 /* GenericCollectionViewController.swift */,
 				C960F746244530180044BB76 /* CheckView.swift */,
 				C960F74D244530180044BB76 /* GenericTableViewCell.swift */,
 				C960F74F244530180044BB76 /* GenericDataSource.swift */,
@@ -479,7 +476,6 @@
 				C99E5BC6246AD4E800A53224 /* InitialCollectionViewCell.swift in Sources */,
 				C99E5BC4246AD4BE00A53224 /* InitialCollectionViewLayout.swift in Sources */,
 				C9D6B195245884C6000BC23C /* CriteriaViewController.swift in Sources */,
-				C99E5BCC246ADE0400A53224 /* GenericCollectionViewController.swift in Sources */,
 				C960F71724452D700044BB76 /* Nina.xcdatamodeld in Sources */,
 				C9D6B19F2458E9EA000BC23C /* ResultItemTableViewCell.swift in Sources */,
 				C970AE0E245E1AC50017B218 /* TreeViewController.swift in Sources */,
