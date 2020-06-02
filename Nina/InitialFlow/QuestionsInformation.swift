@@ -46,7 +46,7 @@ let readingOptions = ["Sim": Answer.yesOrNo(true), "Não": Answer.yesOrNo(false)
 let languageQuestion = "Você está estudando algum idioma estrangeiro? E fez alguma atividade nesse idioma hoje?"
 let languageOptions: [String: Answer] = [
     "Estou estudando e realizei exercícios": Answer.number(10),
-    "Estou estudando mas não realizei exercícios": Answer.number(5),
+    "Estou estudando mas sem exercícios hoje": Answer.number(5),
     "Não estou estudando nenhum idioma": Answer.number(1)
 ]
 let skillsQuestion = "Você está aprendendo alguma habilidade nova?"
