@@ -44,7 +44,6 @@
 		C99E5BC6246AD4E800A53224 /* InitialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC5246AD4E800A53224 /* InitialCollectionViewCell.swift */; };
 		C99E5BC8246AD5A100A53224 /* TreeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC7246AD5A100A53224 /* TreeCollectionViewCell.swift */; };
 		C99E5BCA246AD91A00A53224 /* ContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99E5BC9246AD91A00A53224 /* ContainerCollectionViewCell.swift */; };
-		C9AA3ABE2481C304006E3ECD /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = C9AA3ABD2481C304006E3ECD /* SnapshotTesting */; };
 		C9CCE7632476BD660081F496 /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCE7622476BD660081F496 /* DynamicViewController.swift */; };
 		C9CCE7662476C0420081F496 /* Bifrost in Frameworks */ = {isa = PBXBuildFile; productRef = C9CCE7652476C0420081F496 /* Bifrost */; };
 		C9CCE7682479DBCA0081F496 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCE7672479DBCA0081F496 /* Secrets.swift */; };
@@ -140,7 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CCE7662476C0420081F496 /* Bifrost in Frameworks */,
-				C9AA3ABE2481C304006E3ECD /* SnapshotTesting in Frameworks */,
 				C9FB90682454E65500800AF9 /* HealthKit.framework in Frameworks */,
 				C9D6B1A7245B98AF000BC23C /* CloudKit.framework in Frameworks */,
 			);
@@ -330,7 +328,6 @@
 			name = Nina;
 			packageProductDependencies = (
 				C9CCE7652476C0420081F496 /* Bifrost */,
-				C9AA3ABD2481C304006E3ECD /* SnapshotTesting */,
 			);
 			productName = Nina;
 			productReference = C960F70924452D700044BB76 /* Nina.app */;
@@ -406,7 +403,6 @@
 			mainGroup = C960F70024452D700044BB76;
 			packageReferences = (
 				C9CCE7642476C0420081F496 /* XCRemoteSwiftPackageReference "bifrost" */,
-				C9AA3ABC2481C304006E3ECD /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = C960F70A24452D700044BB76 /* Products */;
 			projectDirPath = "";
@@ -820,14 +816,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C9AA3ABC2481C304006E3ECD /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.2;
-			};
-		};
 		C9CCE7642476C0420081F496 /* XCRemoteSwiftPackageReference "bifrost" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/emannuelOC/bifrost.git";
@@ -839,11 +827,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C9AA3ABD2481C304006E3ECD /* SnapshotTesting */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C9AA3ABC2481C304006E3ECD /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
-			productName = SnapshotTesting;
-		};
 		C9CCE7652476C0420081F496 /* Bifrost */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C9CCE7642476C0420081F496 /* XCRemoteSwiftPackageReference "bifrost" */;

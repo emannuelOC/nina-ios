@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if error != nil {
-                os_log("Failed request user notification authorization", log: self.log, type: .error, #function)
+                os_log(.error, log: self.log, "Failed request user notification authorization at: %{PUBLIC}@", "\(#function)")
             } else if granted {
                 DispatchQueue.main.async {
                     application.registerForRemoteNotifications()
