@@ -33,6 +33,7 @@ extension SelectionTableViewCell {
         checkView.fill(view: contentView)
         backgroundColor = Color.secondary
         contentView.backgroundColor = Color.secondary
+        textLabel?.numberOfLines = 0
     }
 }
 
