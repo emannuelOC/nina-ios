@@ -14,9 +14,12 @@ class DynamicViewController: UIViewController {
     
     let urlString: String
     let log = Nina.log(for: DynamicViewController.self)
+    let creator: DynamicViewCreator
     
-    init(urlString: String = "http://localhost:8080/screen") {
+    init(urlString: String = "http://localhost:8080/screen",
+         creator: DynamicViewCreator = DynamicViewCreator()) {
         self.urlString = urlString
+        self.creator = creator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,18 +30,14 @@ class DynamicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fetchView)))
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         fetchView()
     }
     
     @objc fileprivate func fetchView() {
         let session = URLSession.shared
         guard var urlComponents = URLComponents(string: urlString) else { return }
-        urlComponents.queryItems = [URLQueryItem(name: "darkMode", value: isDarkModeOn ? "1" : "0")]
+        let items = (urlComponents.queryItems ?? []) + [URLQueryItem(name: "darkMode", value: isDarkModeOn ? "1" : "0")]
+        urlComponents.queryItems = items
         guard let url = urlComponents.url else { return }
         let task = session.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
@@ -52,7 +51,7 @@ class DynamicViewController: UIViewController {
                 DispatchQueue.main.async {
                     do {
                         let comp = try DynamicComponent.parse(dictionary: jResult) as DynamicComponent
-                        let view = try DynamicView.createView(dynamicsComponent: comp, actionDelegate: self)
+                        let view = try self.creator.createView(dynamicsComponent: comp, actionDelegate: self)
                         for subview in self.view.subviews {
                             subview.removeFromSuperview()
                         }

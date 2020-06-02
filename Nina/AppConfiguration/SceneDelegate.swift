@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let todayViewController = InitialViewController()
         let resultsViewController = ResultsViewController()
+        resultsViewController.title = "HIstórico"
         let nav = RegularNavigationController()
         nav.viewControllers = [resultsViewController, todayViewController]
         nav.title = "Progresso"

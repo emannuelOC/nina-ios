@@ -63,6 +63,7 @@ class InitialViewController: UIViewController {
         setupViews()
         setupViewModel()
         updateExercises()
+        setupTitle()
     }
     
     fileprivate func setupManager() {
@@ -84,6 +85,16 @@ class InitialViewController: UIViewController {
     fileprivate func setupViews() {
         view.backgroundColor = Color.secondary
         collectionView.fill(view: view)
+    }
+    
+    fileprivate func setupTitle() {
+        if isToday {
+            title = "Hoje"
+            return
+        }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        title = formatter.string(from: viewModel?.dailyResult.date ?? Date())
     }
     
     fileprivate func setupViewModel() {
