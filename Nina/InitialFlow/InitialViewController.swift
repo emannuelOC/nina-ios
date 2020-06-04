@@ -15,7 +15,14 @@ enum InitialViewData {
 
 class InitialViewController: UIViewController {
     
-    var data: [InitialViewData] = ["Leitura", "Idiomas", "Habilidades", "Tree", "Exercícios", "Alimentação", "Sono"].map {
+    var data: [InitialViewData] = [
+        NSLocalizedString("Reading", comment: "The act of reading"),
+        NSLocalizedString("Languages", comment: ""),
+        NSLocalizedString("Skills", comment: ""),
+        "Tree",
+        NSLocalizedString("Exercises", comment: "Physical activities"),
+        NSLocalizedString("Food", comment: ""),
+        NSLocalizedString("Sleep", comment: "The noun")].map {
         if $0 == "Tree" {
             return InitialViewData.tree
         }
@@ -89,7 +96,7 @@ class InitialViewController: UIViewController {
     
     fileprivate func setupTitle() {
         if isToday {
-            title = "Hoje"
+            title = NSLocalizedString("Today", comment: "")
             return
         }
         let formatter = DateFormatter()
@@ -124,17 +131,17 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
     
     fileprivate func isDone(criteriaName: String) -> Bool {
         switch criteriaName {
-        case "Leitura":
+        case NSLocalizedString("Reading", comment: "The act of reading"):
             return viewModel?.dailyResult.readingAdded ?? false
-        case "Idiomas":
+        case NSLocalizedString("Languages", comment: ""):
             return viewModel?.dailyResult.languagesAdded ?? false
-        case "Habilidades":
+        case NSLocalizedString("Skills", comment: ""):
             return viewModel?.dailyResult.skillsAdded ?? false
-        case "Exercícios":
+        case NSLocalizedString("Exercises", comment: "Physical activities"):
             return viewModel?.dailyResult.exercisesAdded ?? false
-        case "Alimentação":
+        case NSLocalizedString("Food", comment: ""):
             return viewModel?.dailyResult.foodAdded ?? false
-        case "Sono":
+        case NSLocalizedString("Sleep", comment: "The noun"):
             return viewModel?.dailyResult.sleepAdded ?? false
         default:
             return false
@@ -171,7 +178,7 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
         case .tree:
             didTapTreeView()
         case .button(let name):
-            if name == "Exercícios" {
+            if name == NSLocalizedString("Exercises", comment: "Physical activities") {
                presentExercises()
             } else if let criteria = BranchesCriteria.criteria(for: name) {
                 didTapCriteria(criteria: criteria)
@@ -200,9 +207,7 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     fileprivate func presentUserInputExercises() {
-        if let criteria = SoilCriteria.criteria(for: "Exercícios") {
-            self.didTapCriteria(criteria: criteria)
-        }
+        self.didTapCriteria(criteria: SoilCriteria.exercises)
     }
     
     fileprivate func presentWatchExercises(score: Double) {

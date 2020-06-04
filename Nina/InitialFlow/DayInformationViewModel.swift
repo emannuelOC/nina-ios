@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import os.log
 
 protocol DayInformationViewModelType {
     func setScore<T: Criteria>(criteria: T, answer: Answer)
@@ -18,6 +19,8 @@ class DayInformationViewModel: DayInformationViewModelType {
     var context: NSManagedObjectContext
     
     var dailyResult: DailyResult!
+    
+    let log = Nina.log(for: DayInformationViewModel.self)
     
     init(context: NSManagedObjectContext) {
         self.context = context
@@ -62,7 +65,7 @@ class DayInformationViewModel: DayInformationViewModelType {
         do {
             try context.save()
         } catch {
-            print("deu errado")
+            os_log(.error, log: self.log, "Failed to find criteria at: %{PUBLIC}@", "\(#function)")
         }
     }
     
@@ -86,7 +89,7 @@ class DayInformationViewModel: DayInformationViewModelType {
         do {
             try context.save()
         } catch {
-            print("deu errado")
+            os_log(.error, log: self.log, "Failed to find criteria at: %{PUBLIC}@", "\(#function)")
         }
     }
     

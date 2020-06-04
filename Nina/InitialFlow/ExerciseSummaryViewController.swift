@@ -13,7 +13,11 @@ class ExerciseSummaryViewController: UIViewController {
     let minutes: Double
     let date: Date
     
-    lazy var titleView: SimpleTitleView = SimpleTitleView(title: "Exercícios").notTranslating()
+    lazy var titleView: SimpleTitleView = {
+        let text = NSLocalizedString("Exercises", comment: "Physical activities")
+        let titleView = SimpleTitleView(title: text).notTranslating()
+        return titleView
+    }()
     
     lazy var textLabel: UILabel = {
         let label = UILabel().notTranslating()
@@ -47,17 +51,19 @@ class ExerciseSummaryViewController: UIViewController {
         textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margin.default).isActive = true
         
         
-        var suffix = "hoje."
+        var suffix = NSLocalizedString("today.", comment: "")
         if !Calendar.current.isDateInToday(date) {
             let formatter = DateFormatter()
             formatter.dateStyle = .medium
-            suffix = "em \(formatter.string(from: date))."
+            suffix = NSLocalizedString("at", comment: "as in: `at June 3rd`") + " \(formatter.string(from: date))."
         }
-        let text = "Como você usa Apple Watch, é possível obter o seu tempo de exercícios pelo HealthKit."
-            + " Você realizou \(minutes) minutos de exercício "
-            + suffix
+        let text = NSLocalizedString("watch.exercise.text", comment: "Explain where data comes from")
+        let localizedText = String(format: text, minutes) + " \(suffix)"
+//        let text1 = "Como você usa Apple Watch, é possível obter o seu tempo de exercícios pelo HealthKit."
+//            + " Você realizou \(minutes) minutos de exercício "
+//            + suffix
         
-        textLabel.text = text
+        textLabel.text = localizedText
         
     }
     

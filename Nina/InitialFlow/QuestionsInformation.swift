@@ -22,37 +22,37 @@ protocol Criteria: CaseIterable {
     func validate(answer: Answer) -> Bool
 }
 
-let exercisesQuestion = "Você se exercitou por mais de 30 minutos hoje?"
-let exercisesOptions = ["Sim": Answer.yesOrNo(true), "Não": Answer.yesOrNo(false)]
-let foodQuestion = "Como você classificaria a sua alimentação hoje?"
+let exercisesQuestion = NSLocalizedString("Did you exercise for more than 30 minutes today?", comment: "")
+let exercisesOptions = [NSLocalizedString("Yes", comment: ""): Answer.yesOrNo(true), NSLocalizedString("No", comment: ""): Answer.yesOrNo(false)]
+let foodQuestion = NSLocalizedString("How would you classify your food today?", comment: "")
 let foodOptions: [String: Answer] = [
-    "Muito saudável": .number(10),
-    "Saudável": .number(7.5),
-    "Regular": .number(5),
-    "Não muito saudável": .number(2.5),
-    "Nada saudável": .number(0)
+    NSLocalizedString("Very healthy", comment: ""): .number(10),
+    NSLocalizedString("Healthy", comment: ""): .number(7.5),
+    NSLocalizedString("Regular", comment: ""): .number(5),
+    NSLocalizedString("Not very healthy", comment: ""): .number(2.5),
+    NSLocalizedString("Not healthy at all", comment: ""): .number(0)
 ]
-let sleepQuestion = "Como você classificaria o seu sono hoje?"
+let sleepQuestion = NSLocalizedString("How was your sleep last night?", comment: "")
 let sleepOptions: [String: Answer] = [
-    "Muito bom": .number(10),
-    "Bom": .number(7.5),
-    "Regular": .number(5),
-    "Ruim": .number(2.5),
-    "Péssimo": .number(0)
+    NSLocalizedString("Very good", comment: ""): .number(10),
+    NSLocalizedString("Good", comment: ""): .number(7.5),
+    NSLocalizedString("Regular", comment: ""): .number(5),
+    NSLocalizedString("Bad", comment: ""): .number(2.5),
+    NSLocalizedString("Terrible", comment: ""): .number(0)
 ]
 
-let readingQuestion = "Você leu algum livro ou artigo científico hoje?"
-let readingOptions = ["Sim": Answer.yesOrNo(true), "Não": Answer.yesOrNo(false)]
-let languageQuestion = "Você está estudando algum idioma estrangeiro? E fez alguma atividade nesse idioma hoje?"
+let readingQuestion = NSLocalizedString("Did you read a book or a scientific article today?", comment: "")
+let readingOptions = [NSLocalizedString("Yes", comment: ""): Answer.yesOrNo(true), NSLocalizedString("No", comment: ""): Answer.yesOrNo(false)]
+let languageQuestion = NSLocalizedString("Are you studying a new language? And did you practice today?", comment: "")
 let languageOptions: [String: Answer] = [
-    "Estou estudando e realizei exercícios": Answer.number(10),
-    "Estou estudando mas não realizei exercícios": Answer.number(5),
-    "Não estou estudando nenhum idioma": Answer.number(1)
+    NSLocalizedString("I am studying and I practiced it today", comment: ""): Answer.number(10),
+    NSLocalizedString("I am studying but I didn't practice today", comment: ""): Answer.number(5),
+    NSLocalizedString("I am not studying a new language", comment: ""): Answer.number(1)
 ]
-let skillsQuestion = "Você está aprendendo alguma habilidade nova?"
+let skillsQuestion = NSLocalizedString("Are you learning a new skill?", comment: "")
 let skillsOptions: [String: Answer] = [
-    "Sim": Answer.yesOrNo(true),
-    "Não": Answer.yesOrNo(false)
+    NSLocalizedString("Yes", comment: ""): Answer.yesOrNo(true),
+    NSLocalizedString("No", comment: ""): Answer.yesOrNo(false)
 ]
 
 enum SoilCriteria: Criteria {
@@ -67,11 +67,11 @@ enum SoilCriteria: Criteria {
     var information: Information {
         switch self {
         case .exercises:
-            return Information(title: "Exercícios", question: exercisesQuestion, options: exercisesOptions)
+            return Information(title: NSLocalizedString("Exercises", comment: "the noun"), question: exercisesQuestion, options: exercisesOptions)
         case .food:
-            return Information(title: "Alimentação", question: foodQuestion, options: foodOptions)
+            return Information(title: NSLocalizedString("Food", comment: ""), question: foodQuestion, options: foodOptions)
         case .sleep:
-            return Information(title: "Sono", question: sleepQuestion, options: sleepOptions)
+            return Information(title: NSLocalizedString("Sleep", comment: ""), question: sleepQuestion, options: sleepOptions)
         }
     }
     
@@ -99,11 +99,11 @@ enum BranchesCriteria: Criteria {
     var information: Information {
         switch self {
         case .reading:
-            return Information(title: "Leitura", question: readingQuestion, options: readingOptions)
+            return Information(title: NSLocalizedString("Reading", comment: ""), question: readingQuestion, options: readingOptions)
         case .languages:
-            return Information(title: "Idiomas", question: languageQuestion, options: languageOptions)
+            return Information(title: NSLocalizedString("Languages", comment: ""), question: languageQuestion, options: languageOptions)
         case .skills:
-            return Information(title: "Habilidades", question: skillsQuestion, options: skillsOptions)
+            return Information(title: NSLocalizedString("Skills", comment: ""), question: skillsQuestion, options: skillsOptions)
         }
     }
     
