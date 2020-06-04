@@ -9,24 +9,24 @@
 import UIKit
 
 enum InitialViewData {
-    case button(String)
+    case button(String, String)
     case tree
 }
 
 class InitialViewController: UIViewController {
     
     var data: [InitialViewData] = [
-        NSLocalizedString("Reading", comment: "The act of reading"),
-        NSLocalizedString("Languages", comment: ""),
-        NSLocalizedString("Skills", comment: ""),
-        "Tree",
-        NSLocalizedString("Exercises", comment: "Physical activities"),
-        NSLocalizedString("Food", comment: ""),
-        NSLocalizedString("Sleep", comment: "The noun")].map {
-        if $0 == "Tree" {
-            return InitialViewData.tree
+        ("Leitura", NSLocalizedString("Reading", comment: "The act of reading")),
+        ("Idiomas", NSLocalizedString("Languages", comment: "")),
+        ("Habilidades", NSLocalizedString("Skills", comment: "")),
+        ("", "Tree"),
+        ("Exercícios", NSLocalizedString("Exercises", comment: "Physical activities")),
+        ("Alimentação", NSLocalizedString("Food", comment: "")),
+        ("Sono", NSLocalizedString("Sleep", comment: "The noun"))].map {
+            if $0.1 == "Tree" {
+                return InitialViewData.tree
         }
-        return InitialViewData.button($0)
+            return InitialViewData.button($0.0, $0.1)
     }
     
     var viewModel: DayInformationViewModel?
@@ -162,12 +162,12 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
             (cell as? TreeViewCell)?.treeView.branchesScore = viewModel?.branchesScore ?? 0
             (cell as? TreeViewCell)?.treeView.soilScore = viewModel?.soilScore ?? 0
             return cell
-        case .button(let imageName):
+        case .button(let imageName, let text):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: InitialCollectionViewCell.self),
                                                           for: indexPath)
 
             cell.layer.masksToBounds = true
-            (cell as? InitialCollectionViewCell)?.setup(data: imageName, done: isDone(criteriaName: imageName))
+            (cell as? InitialCollectionViewCell)?.setup(imageName: imageName, text: text, done: isDone(criteriaName: imageName))
             return cell
         }
     }
@@ -177,7 +177,7 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
         switch item {
         case .tree:
             didTapTreeView()
-        case .button(let name):
+        case .button(_, let name):
             if name == NSLocalizedString("Exercises", comment: "Physical activities") {
                presentExercises()
             } else if let criteria = BranchesCriteria.criteria(for: name) {

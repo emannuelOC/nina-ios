@@ -40,9 +40,9 @@ class InitialCollectionViewCell: UICollectionViewCell {
     let borderLayer = CAShapeLayer()
     let progressLayer = CAShapeLayer()
     
-    func setup(data: String, done: Bool) {
-        imageView.image = UIImage(named: data)
-        label.text = data
+    func setup(imageName: String, text: String, done: Bool) {
+        imageView.image = UIImage(named: imageName)
+        label.text = text
         isDone = done
     }
     
