@@ -29,6 +29,9 @@
 "Healthy" = "Saudável";
 
 /* No comment provided by engineer. */
+"History" = "Histórico";
+
+/* No comment provided by engineer. */
 "How was your sleep last night?" = "Como você classificaria o seu sono na noite passada?";
 
 /* No comment provided by engineer. */
@@ -44,6 +47,9 @@
 "I am studying but I didn't practice today" = "Estou estudando mas não realizei exercícios hoje";
 
 /* No comment provided by engineer. */
+"Informations" = "Informações";
+
+/* No comment provided by engineer. */
 "Languages" = "Idiomas";
 
 /* No comment provided by engineer. */
@@ -54,6 +60,9 @@
 
 /* No comment provided by engineer. */
 "Not very healthy" = "Não muito saudável";
+
+/* No comment provided by engineer. */
+"Progress" = "Progresso";
 
 /* The act of reading */
 "Reading" = "Leitura";
@@ -81,6 +90,9 @@
 
 /* No comment provided by engineer. */
 "Very healthy" = "Muito saudável";
+
+/* Explain where data comes from */
+"watch.exercise.text" = "Como você usa um Apple Watch, é possível obter o seu tempo de exercícios pelo HealthKit. Você fez %@ minutos ";
 
 /* No comment provided by engineer. */
 "Yes" = "Sim";

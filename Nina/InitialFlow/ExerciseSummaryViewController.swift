@@ -43,7 +43,7 @@ class ExerciseSummaryViewController: UIViewController {
         view.addSubview(textLabel)
         
         titleView.attachToTop(at: view, margin: Margin.default)
-        titleView.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        titleView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         titleView.titleLabel.textAlignment = .center
         
         textLabel.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 20).isActive = true
@@ -58,7 +58,8 @@ class ExerciseSummaryViewController: UIViewController {
             suffix = NSLocalizedString("at", comment: "as in: `at June 3rd`") + " \(formatter.string(from: date))."
         }
         let text = NSLocalizedString("watch.exercise.text", comment: "Explain where data comes from")
-        let localizedText = String(format: text, minutes) + " \(suffix)"
+        let minutesString = String(format: "%.2f", minutes)
+        let localizedText = String(format: text, minutesString) + " \(suffix)"
         
         textLabel.text = localizedText
         

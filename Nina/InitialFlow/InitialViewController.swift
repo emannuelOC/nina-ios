@@ -167,7 +167,7 @@ extension InitialViewController: UICollectionViewDataSource, UICollectionViewDel
                                                           for: indexPath)
 
             cell.layer.masksToBounds = true
-            (cell as? InitialCollectionViewCell)?.setup(imageName: imageName, text: text, done: isDone(criteriaName: imageName))
+            (cell as? InitialCollectionViewCell)?.setup(imageName: imageName, text: text, done: isDone(criteriaName: text))
             return cell
         }
     }
