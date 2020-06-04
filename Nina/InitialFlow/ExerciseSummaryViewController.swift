@@ -59,9 +59,6 @@ class ExerciseSummaryViewController: UIViewController {
         }
         let text = NSLocalizedString("watch.exercise.text", comment: "Explain where data comes from")
         let localizedText = String(format: text, minutes) + " \(suffix)"
-//        let text1 = "Como você usa Apple Watch, é possível obter o seu tempo de exercícios pelo HealthKit."
-//            + " Você realizou \(minutes) minutos de exercício "
-//            + suffix
         
         textLabel.text = localizedText
         
