@@ -1,0 +1,9 @@
+/* Bundle name */
+"CFBundleName" = "Nina";
+
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "Nina usa dados de Saúde para monitorar seus exercícios diários.";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "Nina usa dados de Saúde para monitorar seus exercícios diários.";
+
