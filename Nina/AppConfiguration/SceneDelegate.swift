@@ -18,17 +18,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let todayViewController = InitialViewController()
         let resultsViewController = ResultsViewController()
-        resultsViewController.title = "Histórico"
+        resultsViewController.title = NSLocalizedString("History", comment: "")
         let nav = RegularNavigationController()
         nav.viewControllers = [resultsViewController, todayViewController]
-        nav.title = "Progresso"
-        nav.tabBarItem = UITabBarItem(title: "Progresso",
+        let progressText = NSLocalizedString("Progress", comment: "")
+        nav.title = progressText
+        nav.tabBarItem = UITabBarItem(title: progressText,
                                       image: UIImage(named: "NinaTab2"),
                                       selectedImage: UIImage(named: "NinaTab"))
         
         let dynamic = DynamicViewController(urlString: Secrets.screenURL)
-        dynamic.title = "Informações"
-        dynamic.tabBarItem = UITabBarItem(title: "Informações",
+        let informationsText = NSLocalizedString("Informations", comment: "")
+        dynamic.title = informationsText
+        dynamic.tabBarItem = UITabBarItem(title: informationsText,
                                           image: UIImage(systemName: "bell"),
                                           selectedImage: UIImage(systemName: "bell.fill"))
         let nav2 = RegularNavigationController()
