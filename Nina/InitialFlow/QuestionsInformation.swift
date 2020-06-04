@@ -67,7 +67,7 @@ enum SoilCriteria: Criteria {
     var information: Information {
         switch self {
         case .exercises:
-            return Information(title: NSLocalizedString("Exercises", comment: "the noun"), question: exercisesQuestion, options: exercisesOptions)
+            return Information(title: NSLocalizedString("Exercises", comment: "Physical activities"), question: exercisesQuestion, options: exercisesOptions)
         case .food:
             return Information(title: NSLocalizedString("Food", comment: ""), question: foodQuestion, options: foodOptions)
         case .sleep:
