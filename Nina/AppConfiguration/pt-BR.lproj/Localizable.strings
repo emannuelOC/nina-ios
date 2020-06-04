@@ -11,6 +11,9 @@
 "Bad" = "Ruim";
 
 /* No comment provided by engineer. */
+"Branches: %@" = "Ramos: %@";
+
+/* No comment provided by engineer. */
 "Did you exercise for more than 30 minutes today?" = "Você realizou exercícios físicos por mais de 30 minutos hoje?";
 
 /* No comment provided by engineer. */
@@ -77,7 +80,16 @@
 "Sleep" = "Sono";
 
 /* No comment provided by engineer. */
+"Soil: %@" = "Solo %@";
+
+/* No comment provided by engineer. */
 "Terrible" = "Péssimo";
+
+/* No comment provided by engineer. */
+"The branches represent your cognitive reserve" = "Os ramos representam sua reserva cognitiva";
+
+/* No comment provided by engineer. */
+"The soil represents the health of your brain tissue" = "O solo representa a saúde do seu tecido cerebral";
 
 /* No comment provided by engineer. */
 "Today" = "Hoje";

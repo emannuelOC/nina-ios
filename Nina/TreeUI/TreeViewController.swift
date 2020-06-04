@@ -36,33 +36,30 @@ class TreeViewController: UIViewController {
     fileprivate func setupViews() {
         view.backgroundColor = Color.secondary
         
+        let soilView = SimpleTextView(text: NSLocalizedString("The soil represents the health of your brain tissue", comment: "")).notTranslating()
+        soilView.heightAnchor.constraint(greaterThanOrEqualToConstant: 160).isActive = true
+        
         view.fill(with: [
             treeView,
             branchesTitleView,
-            SimpleTextView(text: "Os ramos representam a sua reserva cognitiva"),
+            SimpleTextView(text: NSLocalizedString("The branches represent your cognitive reserve", comment: "")),
             soilTitleView,
-            SimpleTextView(text: "O solo representa a saúde do seu tecido cerebral"),
-            SimpleTextView(text: "")
-        ])
+            soilView
+        ], margin: 0)
         
         treeView.constraintSquare(side: 200)
         treeView.layer.cornerRadius = 100
         treeView.backgroundColor = Color.secondary
         
-        treeView.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(debug))
-        )
     }
     
     fileprivate func updateUI() {
         treeView.branchesScore = branchesScore
         treeView.soilScore = soilScore
-        branchesTitleView.title = "Ramos: \(String(format: "%.2f", branchesScore))"
-        soilTitleView.title = "Solo: \(String(format: "%.2f", soilScore))"
-    }
-    
-    @objc fileprivate func debug() {
-        print("hello")
+        let branchesString = "\(String(format: "%.2f", branchesScore))"
+        let soilString = "\(String(format: "%.2f", soilScore))"
+        branchesTitleView.title = String(format: NSLocalizedString("Branches: %@", comment: ""), branchesString)
+        soilTitleView.title = String(format: NSLocalizedString("Soil: %@", comment: ""), soilString)
     }
     
 }
