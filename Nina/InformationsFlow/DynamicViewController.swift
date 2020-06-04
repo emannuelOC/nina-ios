@@ -36,7 +36,11 @@ class DynamicViewController: UIViewController {
     @objc fileprivate func fetchView() {
         let session = URLSession.shared
         guard var urlComponents = URLComponents(string: urlString) else { return }
-        let items = (urlComponents.queryItems ?? []) + [URLQueryItem(name: "darkMode", value: isDarkModeOn ? "1" : "0")]
+        let language = Bundle.preferredLocalizations(from: ["en", "es", "pt"]).first ?? "en"
+        let items = (urlComponents.queryItems ?? []) + [
+            URLQueryItem(name: "darkMode", value: isDarkModeOn ? "1" : "0"),
+            URLQueryItem(name: "language", value: language)
+        ]
         urlComponents.queryItems = items
         guard let url = urlComponents.url else { return }
         let task = session.dataTask(with: url) { (data, response, error) in
