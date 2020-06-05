@@ -44,7 +44,8 @@ class CriteriaViewController<T: Criteria>: UIViewController, SelectionViewDelega
     var selectedAnswer: Answer?
     
     lazy var doneButtonView: PrimaryButtonView = {
-        let buttonView = PrimaryButtonView(title: "Confirmar", target: self, action: #selector(confirm)).notTranslating()
+        let text = NSLocalizedString("Confirm", comment: "")
+        let buttonView = PrimaryButtonView(title: text, target: self, action: #selector(confirm)).notTranslating()
         return buttonView
     }()
     

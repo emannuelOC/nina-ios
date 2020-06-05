@@ -11,7 +11,10 @@
 "Bad" = "Malo";
 
 /* No comment provided by engineer. */
-"Branches: %@" = "Ramas: %@";
+"Branches: %@/10" = "Ramas: %@/10";
+
+/* No comment provided by engineer. */
+"Confirm" = "Confirmar";
 
 /* No comment provided by engineer. */
 "Did you exercise for more than 30 minutes today?" = "¿Hiciste ejercicio por más de 30 minutos hoy?";
@@ -80,7 +83,7 @@
 "Sleep" = "Sueño";
 
 /* No comment provided by engineer. */
-"Soil: %@" = "Suelo: %@";
+"Soil: %@/10" = "Suelo: %@/10";
 
 /* No comment provided by engineer. */
 "Terrible" = "Terrible";
