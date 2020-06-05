@@ -56,10 +56,10 @@ class TreeViewController: UIViewController {
     fileprivate func updateUI() {
         treeView.branchesScore = branchesScore
         treeView.soilScore = soilScore
-        let branchesString = "\(String(format: "%.2f", branchesScore))"
-        let soilString = "\(String(format: "%.2f", soilScore))"
-        branchesTitleView.title = String(format: NSLocalizedString("Branches: %@", comment: ""), branchesString)
-        soilTitleView.title = String(format: NSLocalizedString("Soil: %@", comment: ""), soilString)
+        let branchesString = "\(String(format: "%.1f", branchesScore))"
+        let soilString = "\(String(format: "%.1f", soilScore))"
+        branchesTitleView.title = String(format: NSLocalizedString("Branches: %@/10", comment: ""), branchesString)
+        soilTitleView.title = String(format: NSLocalizedString("Soil: %@/10", comment: ""), soilString)
     }
     
 }
