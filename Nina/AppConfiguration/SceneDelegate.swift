@@ -28,9 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                       selectedImage: UIImage(named: "NinaTab"))
         
         let dynamic = DynamicViewController(urlString: Secrets.screenURL)
-        let informationsText = NSLocalizedString("Informations", comment: "")
-        dynamic.title = informationsText
-        dynamic.tabBarItem = UITabBarItem(title: informationsText,
+        let informationText = NSLocalizedString("Information", comment: "")
+        dynamic.title = informationText
+        dynamic.tabBarItem = UITabBarItem(title: informationText,
                                           image: UIImage(systemName: "bell"),
                                           selectedImage: UIImage(systemName: "bell.fill"))
         let nav2 = RegularNavigationController()
